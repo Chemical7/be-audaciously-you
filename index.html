@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be Audaciously You</title>
+  <meta name="description" content="We help women amplify and unleash their most audacious selves. Masterclasses, events, and community for women reclaiming their power through style and softness.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ========== CSS RESET & VARIABLES ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Core palette from mockup */
+      --charcoal: #1a1a2e;
+      --charcoal-light: #2a2a3e;
+      --gold: #c9a96e;
+      --gold-light: #d4bb8a;
+      --gold-muted: #b8a07a;
+      --tan: #b8a88a;
+      --hot-pink: #d6336c;
+      --cream: #f5f0e8;
+      --cream-dark: #ebe4d8;
+
+      /* Complementary additions */
+      --plum: #4a2040;
+      --plum-light: #6b3a5c;
+      --rose: #e8c4c4;
+      --rose-light: #f2dede;
+      --champagne: #f7ead0;
+      --soft-white: #faf8f5;
+      --deep-navy: #12121f;
+
+      /* Typography */
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', -apple-system, sans-serif;
+      --font-elegant: 'Cormorant Garamond', Georgia, serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--charcoal);
+      background: var(--soft-white);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; font-family: inherit; }
+
+    /* ========== NAVIGATION ========== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.4s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(26, 26, 46, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 0.75rem 2rem;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--cream);
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      padding: 4px;
+    }
+
+    .nav-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--gold);
+      transition: all 0.3s;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: var(--deep-navy);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 40% 50% at 70% 30%, rgba(201, 169, 110, 0.15), transparent),
+        radial-gradient(ellipse 35% 45% at 30% 60%, rgba(74, 32, 64, 0.2), transparent),
+        radial-gradient(ellipse 50% 60% at 50% 80%, rgba(201, 169, 110, 0.08), transparent);
+    }
+
+    /* Spotlight effects */
+    .hero-spotlight {
+      position: absolute;
+      width: 300px;
+      height: 500px;
+      background: linear-gradient(180deg, rgba(201, 169, 110, 0.25) 0%, rgba(201, 169, 110, 0.05) 60%, transparent 100%);
+      clip-path: polygon(35% 0%, 65% 0%, 100% 100%, 0% 100%);
+    }
+
+    .hero-spotlight:nth-child(1) {
+      top: -50px;
+      right: 15%;
+      transform: rotate(-5deg);
+    }
+
+    .hero-spotlight:nth-child(2) {
+      top: -50px;
+      right: 30%;
+      transform: rotate(8deg);
+      opacity: 0.6;
+    }
+
+    .hero-floor {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 35%;
+      background: linear-gradient(0deg, rgba(201, 169, 110, 0.06) 0%, transparent 100%);
+    }
+
+    .hero-glow {
+      position: absolute;
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 200px;
+      background: radial-gradient(ellipse, rgba(201, 169, 110, 0.12), transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: left;
+      max-width: 800px;
+      padding: 2rem;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    .hero-content h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      color: var(--gold);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    .hero-content p {
+      color: var(--cream-dark);
+      font-size: 1.1rem;
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      padding: 0.9rem 2.5rem;
+      background: var(--gold);
+      color: var(--charcoal);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(201, 169, 110, 0.3);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 0.9rem 2.5rem;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--charcoal);
+      transform: translateY(-2px);
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--gold-muted);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .scroll-indicator svg {
+      width: 20px;
+      height: 20px;
+      stroke: var(--gold-muted);
+    }
+
+    /* ========== ABOUT ========== */
+    .about {
+      padding: 8rem 2rem;
+      background: var(--tan);
+      position: relative;
+    }
+
+    .about::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(180deg, var(--deep-navy), var(--tan));
+    }
+
+    .about-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .about-text .section-label {
+      font-family: var(--font-elegant);
+      font-size: 1.1rem;
+      color: var(--hot-pink);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .about-text h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--charcoal);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    .about-text p {
+      color: var(--charcoal);
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p strong {
+      font-weight: 600;
+    }
+
+    .about-text .btn-gold {
+      margin-top: 1.5rem;
+    }
+
+    .about-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-badge {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: var(--charcoal);
+      border: 3px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+
+    .logo-badge .logo-text-top {
+      font-family: var(--font-elegant);
+      font-size: 1.1rem;
+      color: var(--gold);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .logo-badge .logo-text-main {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      color: var(--gold);
+      line-height: 1.1;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .logo-badge .logo-text-script {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-top: -0.3rem;
+    }
+
+    /* ========== SERVICES ========== */
+    .services {
+      padding: 8rem 2rem;
+      background: var(--soft-white);
+      position: relative;
+    }
+
+    .services-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .services-header .section-label {
+      font-family: var(--font-elegant);
+      font-size: 1.1rem;
+      color: var(--hot-pink);
+      font-style: italic;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .services-header h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--charcoal);
+      font-weight: 400;
+    }
+
+    .services-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .service-card {
+      position: relative;
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+      border: 1px solid var(--cream-dark);
+      background: var(--soft-white);
+      transition: all 0.4s ease;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.4s ease;
+    }
+
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+      border-color: var(--gold-light);
+    }
+
+    .service-icon {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--champagne), var(--gold-light));
+    }
+
+    .service-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--charcoal);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .service-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--charcoal);
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* ========== FOUNDER ========== */
+    .founder {
+      padding: 8rem 2rem;
+      background: var(--cream);
+    }
+
+    .founder-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .founder-image-wrap {
+      position: relative;
+    }
+
+    .founder-image {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: var(--tan);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .founder-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .founder-image-accent {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 120px;
+      height: 120px;
+      border: 2px solid var(--gold);
+      z-index: -1;
+    }
+
+    .founder-text .section-label {
+      font-family: var(--font-elegant);
+      font-size: 1.1rem;
+      color: var(--hot-pink);
+      font-style: italic;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .founder-text h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--charcoal);
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+
+    .founder-text .founder-subtitle {
+      font-family: var(--font-elegant);
+      font-size: 1.1rem;
+      color: var(--gold-muted);
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+
+    .founder-text p {
+      font-size: 0.92rem;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 1.2rem;
+    }
+
+    .founder-quote {
+      margin-top: 2rem;
+      padding: 1.5rem 0;
+      border-top: 1px solid var(--gold-light);
+      border-bottom: 1px solid var(--gold-light);
+    }
+
+    .founder-quote p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    /* ========== VISION ========== */
+    .vision {
+      padding: 8rem 2rem;
+      background: var(--soft-white);
+      position: relative;
+    }
+
+    .vision-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .vision .section-label {
+      font-family: var(--font-elegant);
+      font-size: 1.1rem;
+      color: var(--hot-pink);
+      font-style: italic;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .vision h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--charcoal);
+      font-weight: 400;
+      margin-bottom: 2.5rem;
+    }
+
+    .vision p {
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .vision .btn-gold {
+      margin-top: 1.5rem;
+    }
+
+    /* Decorative divider */
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold);
+      margin: 3rem auto;
+    }
+
+    /* ========== CONTACT ========== */
+    .contact {
+      padding: 8rem 2rem;
+      background: var(--charcoal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 50%;
+      height: 100%;
+      background: radial-gradient(ellipse at 80% 50%, rgba(74, 32, 64, 0.3), transparent 70%);
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-info h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      color: var(--gold);
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+
+    .contact-info p {
+      color: var(--cream-dark);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-detail-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(201, 169, 110, 0.1);
+      border: 1px solid rgba(201, 169, 110, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .contact-detail-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .contact-detail span {
+      color: var(--cream);
+      font-size: 0.95rem;
+    }
+
+    .contact-social {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .contact-social a {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(201, 169, 110, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .contact-social a:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .contact-social a:hover svg { stroke: var(--charcoal); }
+
+    .contact-social svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--gold);
+      fill: none;
+      stroke-width: 1.5;
+    }
+
+    .contact-form {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(201, 169, 110, 0.15);
+      padding: 2.5rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .contact-form h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      font-weight: 400;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--gold-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201, 169, 110, 0.2);
+      color: var(--cream);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      transition: border-color 0.3s;
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: rgba(245, 240, 232, 0.3);
+    }
+
+    .contact-form .btn-gold {
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      padding: 3rem 2rem;
+      background: var(--deep-navy);
+      text-align: center;
+      border-top: 1px solid rgba(201, 169, 110, 0.1);
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+
+    .footer p {
+      color: rgba(245, 240, 232, 0.4);
+      font-size: 0.8rem;
+    }
+
+    /* ========== ANIMATIONS ========== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-8px); }
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 900px) {
+      .about-inner,
+      .founder-inner,
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .about-logo { order: -1; }
+      .logo-badge { width: 200px; height: 200px; }
+      .logo-badge .logo-text-main { font-size: 1.6rem; }
+      .logo-badge .logo-text-script { font-size: 1.8rem; }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(26, 26, 46, 0.98);
+        padding: 1.5rem 2rem;
+        gap: 1.25rem;
+      }
+      .nav-toggle { display: flex; }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav-logo">Be Audaciously You</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#founder">Founder</a></li>
+      <li><a href="#vision">Vision</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-spotlight"></div>
+    <div class="hero-spotlight"></div>
+    <div class="hero-floor"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <h1>Be Audaciously<br>You</h1>
+      <p>We help women amplify and unleash their most audacious selves. So they can be undeniably visible in all aspects of life.</p>
+      <a href="#contact" class="btn-gold">Join Us</a>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 5v14M5 12l7 7 7-7"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-inner">
+      <div class="about-text reveal">
+        <span class="section-label">About Us</span>
+        <h2>A Space for Women</h2>
+        <p>Our mission is to hold space for their <strong>softness</strong>: creating an environment where women feel safe to let down their guard, embrace vulnerability, and nurture gentleness without judgment or pressure.</p>
+        <p>It's about countering the expectation that strength must always look hard or unyielding, and instead honoring the quiet power of softness, care, and authenticity.</p>
+        <p>We educate and empower women to use their wardrobes not just as clothing but as tools of transformation.</p>
+        <a href="#contact" class="btn-gold">Join Us</a>
+      </div>
+      <div class="about-logo reveal">
+        <div class="logo-badge">
+          <span class="logo-text-top">Be</span>
+          <span class="logo-text-main">Audaciously.</span>
+          <span class="logo-text-script">You.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="services-header reveal">
+      <span class="section-label">What We Offer</span>
+      <h2>Our Services</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+          </svg>
+        </div>
+        <h3>Masterclasses</h3>
+        <p>Expert-led sessions on personal styling, confidence building, and reclaiming your feminine power through fashion and presence.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+            <line x1="16" y1="2" x2="16" y2="6"/>
+            <line x1="8" y1="2" x2="8" y2="6"/>
+            <line x1="3" y1="10" x2="21" y2="10"/>
+          </svg>
+        </div>
+        <h3>Events</h3>
+        <p>Curated gatherings and experiences designed to connect, inspire, and celebrate women who dare to be unapologetically themselves.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+        </div>
+        <h3>Gallery</h3>
+        <p>A visual celebration of audacious style. Showcasing the transformative power of fashion and the women who wear it boldly.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <h3>Community</h3>
+        <p>A supportive sisterhood of like-minded women who uplift each other, share their journeys, and grow together in confidence.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="founder" id="founder">
+    <div class="founder-inner">
+      <div class="founder-image-wrap reveal">
+        <div class="founder-image">
+          <img src="images/founder-placeholder.jpg" alt="Carol Mnisi, Founder of Be Audaciously You" style="object-position: right top;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg, var(--plum), var(--charcoal));color:var(--gold);font-family:var(--font-display);font-size:1.5rem;text-align:center;padding:2rem;\'>Carol Mnisi<br><span style=\'font-family:var(--font-elegant);font-size:1rem;color:var(--gold-light);font-style:italic;\'>Founder</span></div>'">
+        </div>
+        <div class="founder-image-accent"></div>
+      </div>
+      <div class="founder-text reveal">
+        <span class="section-label">The Founder</span>
+        <h2>Carol Mnisi</h2>
+        <p class="founder-subtitle">Global Sourcing Strategist. Fashion Devotee. Feminine Energy Advocate.</p>
+        <p>I am Carol Mnisi, a global sourcing strategist with over 25 years of experience navigating supply chains across steel, energy, and mining equipment manufacturing. I thrived in industries defined by grit and grind: spaces where masculine energy was the currency of success.</p>
+        <p>I adapted. I excelled. But I lost touch with myself. Efficiency became my armor, yet joy slipped away.</p>
+        <p>At the height of achievement, I felt invincible to the world but invisible to my own soul. Then came the shift. The universe called me inward. I rediscovered the essence I had buried: empathy, intuition, creativity. These were not weaknesses; they were my superpowers.</p>
+        <p>Fashion became my sanctuary, style my language. Every outfit declared: I am soft yet strong. I stopped performing and started becoming.</p>
+        <div class="founder-quote">
+          <p>"Today, I am no longer surviving. I am thriving. I am whole. I am audaciously me. Now it's your turn."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION -->
+  <section class="vision" id="vision">
+    <div class="vision-inner reveal">
+      <span class="section-label">Our Vision</span>
+      <h2>Mission Statement</h2>
+      <p>"Be Audaciously You" is more than a movement: it's a revolution of self-empowerment, a clarion call to live unapologetically and embrace every nuance of your unique identity. Members of this community don't simply wear fashion; they transform it into a statement of boldness and individuality. It's about embodying audacity in every stride, every glance, and every choice.</p>
+      <p>In a world that often tries to fit us into predefined molds, "Be Audaciously You" challenges norms and shatters expectations. It invites individuals to step into the spotlight of their own lives with confidence and elegance. This community is for those who refuse to be subdued, who understand that true style is not just about the fabric on their backs but the spirit with which they carry themselves.</p>
+      <p>It's a declaration that being yourself is not only enough: it's everything. With each sartorial decision, members assert their right to be vibrant, complex, and undeniably themselves. Join the movement, and let your audacity shine like a beacon, lighting the path for others to follow.</p>
+      <div class="divider"></div>
+      <a href="#contact" class="btn-gold">Join the Movement</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="contact-info reveal">
+        <h2>Join the Community</h2>
+        <p>Fill out the registration to become a part of our empowering movement. We would love to have you.</p>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <span>(+27) 78-305-2703</span>
+        </div>
+
+        <div class="contact-detail">
+          <div class="contact-detail-icon">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <span>info@beaudaciouslyyou.com</span>
+        </div>
+
+        <div class="contact-social">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+        <h3>Register Now</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Jane" required>
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="+27 00 000 0000">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell us how we can serve you</label>
+          <textarea id="message" name="message" placeholder="Share your story, ask a question, or tell us what you're looking for..."></textarea>
+        </div>
+        <button type="submit" class="btn-gold">Register</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">Be Audaciously You</div>
+    <p>&copy; 2026 Be Audaciously You. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Navigation scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu toggle
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    reveals.forEach(el => observer.observe(el));
+
+    // Form handler (placeholder)
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = e.target.querySelector('button[type="submit"]');
+      const original = btn.textContent;
+      btn.textContent = 'Thank you!';
+      btn.style.background = '#4a2040';
+      btn.style.color = '#f5f0e8';
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.style.background = '';
+        btn.style.color = '';
+        e.target.reset();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
