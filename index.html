@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Be Audaciously You - Design Options</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
@@ -150,7 +152,7 @@
       display: flex;
       align-items: center;
       position: relative;
-      background: url('images/hero-stage.jpg') center/cover no-repeat;
+      background: url('images/hero-stage.jpg') center top/cover no-repeat;
       background-attachment: fixed;
     }
 
@@ -263,23 +265,13 @@
     }
 
     .l0-logo-badge {
-      width: 220px;
-      height: 220px;
-      border-radius: 50%;
-      background: var(--charcoal);
-      border: 2px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      text-align: center;
-      padding: 1.5rem;
-      box-shadow: 0 0 80px rgba(201,169,110,0.08);
+      width: 240px;
+      height: 240px;
+      display: block;
+      margin: 0 auto;
+      filter: drop-shadow(0 0 60px rgba(201,169,110,0.18));
     }
-
-    .l0-logo-badge .top { font-family: var(--font-elegant); font-size: 0.9rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; }
-    .l0-logo-badge .main { font-family: var(--font-display); font-size: 1.7rem; color: var(--gold); line-height: 1.1; font-weight: 700; text-transform: uppercase; }
-    .l0-logo-badge .script { font-family: var(--font-display); font-style: italic; font-size: 2rem; color: var(--gold); margin-top: -0.2rem; }
+    .l0-logo-badge img { width: 100%; height: 100%; display: block; }
 
     /* Services: horizontal row, glass cards on parallax image */
     .l0-services {
@@ -423,7 +415,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: url('images/community-lifestyle.jpg') center/cover no-repeat;
+      background: url('images/community-lifestyle.jpg') center 25%/cover no-repeat;
       background-attachment: fixed;
       padding: 6rem 2rem;
     }
@@ -580,6 +572,7 @@
       text-align: center;
     }
 
+    .l0-footer .logo-mark { width: 84px; height: 84px; display: block; margin: 0 auto 1rem; }
     .l0-footer .logo { font-family: var(--font-display); font-size: 1.2rem; color: var(--gold); margin-bottom: 1rem; }
     .l0-footer p { color: rgba(245,240,232,0.3); font-size: 0.75rem; }
 
@@ -698,7 +691,7 @@
 
     .l1-hero-right {
       position: relative;
-      background: url('images/hero-editorial.jpg') center/cover no-repeat;
+      background: url('images/hero-editorial.jpg') center 20%/cover no-repeat;
       overflow: hidden;
     }
 
@@ -756,7 +749,7 @@
     }
 
     .l1-about-img {
-      background: url('images/community-lifestyle.jpg') center/cover no-repeat;
+      background: url('images/community-lifestyle.jpg') center 25%/cover no-repeat;
       position: relative;
     }
 
@@ -974,7 +967,7 @@
     .l2-community-band {
       width: 100%;
       height: 400px;
-      background: url('images/community-lifestyle.jpg') center/cover no-repeat;
+      background: url('images/community-lifestyle.jpg') center 20%/cover no-repeat;
       position: relative;
     }
 
@@ -1889,6 +1882,7 @@
       text-align: center;
     }
 
+    .l4-footer .logo-mark { width: 84px; height: 84px; display: block; margin: 0 auto 1rem; }
     .l4-footer .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--gold); margin-bottom: 1rem; }
     .l4-footer p { color: rgba(231,222,217,0.3); font-size: 0.75rem; }
     .l4-footer .dev-sig {
@@ -1896,6 +1890,175 @@
       border-top: 1px solid rgba(181,162,129,0.06);
       font-size: 0.65rem; color: rgba(231,222,217,0.2); letter-spacing: 0.05em;
     }
+
+    /* Masterclass Program */
+    .l4-program {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .l4-program-header { text-align: center; margin-bottom: 4rem; }
+    .l4-program-header .overline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--hot-pink);
+      font-size: 1rem;
+    }
+    .l4-program-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin: 0.5rem 0 1rem;
+      line-height: 1.15;
+    }
+    .l4-program-header p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: rgba(231,222,217,0.7);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .l4-program-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .l4-program-card {
+      padding: 2.5rem;
+      background: rgba(181,162,129,0.04);
+      border: 1px solid rgba(181,162,129,0.15);
+      position: relative;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .l4-program-card:hover {
+      background: rgba(181,162,129,0.08);
+      border-color: rgba(181,162,129,0.3);
+    }
+    .l4-program-card .part {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      color: var(--hot-pink);
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .l4-program-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      margin-bottom: 1.25rem;
+      line-height: 1.25;
+    }
+    .l4-program-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+    }
+    .l4-program-card li {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.02rem;
+      line-height: 1.9;
+      color: rgba(231,222,217,0.72);
+      padding-left: 1.3rem;
+      position: relative;
+    }
+    .l4-program-card li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.85em;
+      width: 0.7rem;
+      height: 1px;
+      background: var(--gold);
+    }
+    .l4-program-card .activity {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(181,162,129,0.15);
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.98rem;
+      color: var(--hot-pink);
+    }
+
+    /* Recent Events gallery */
+    .l4-events {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .l4-events-header { text-align: center; margin-bottom: 3rem; }
+    .l4-events-header .overline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--hot-pink);
+      font-size: 1rem;
+    }
+    .l4-events-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin: 0.5rem 0 1rem;
+    }
+    .l4-events-header p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: rgba(231,222,217,0.65);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .l4-events-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .l4-event-tile {
+      position: relative;
+      aspect-ratio: 3/4;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      transition: transform 0.5s ease;
+    }
+    .l4-event-tile:hover { transform: translateY(-6px); }
+    .l4-event-tile::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 45%, rgba(15,17,24,0.92) 100%);
+    }
+    .l4-event-tile .caption {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      z-index: 2;
+    }
+    .l4-event-tile .caption .date {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--hot-pink);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .l4-event-tile .caption h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.3;
+      margin: 0;
+    }
+    .l4-event-tile-1 { background-image: url('images/event-erre-duo.jpg'); }
+    .l4-event-tile-2 { background-image: url('images/community-masterclass.jpg'); }
+    .l4-event-tile-3 { background-image: url('images/event-grazing.jpg'); }
 
     /* ============================================================
        RESPONSIVE
@@ -1920,6 +2083,9 @@
       .l3-about { grid-template-columns: 1fr; text-align: center; }
 
       .l4-about { grid-template-columns: 1fr; }
+      .l4-program-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .l4-events-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .l4-event-tile { aspect-ratio: 16/10; }
       .l4-strip { grid-template-columns: repeat(2, 1fr); }
       .l4-founder { grid-template-columns: 1fr; }
       .l4-contact { grid-template-columns: 1fr; }
@@ -1987,9 +2153,7 @@
 
     <div class="l0-badge-wrap sr">
       <div class="l0-logo-badge">
-        <span class="top">Be</span>
-        <span class="main">Audaciously.</span>
-        <span class="script">You.</span>
+        <img src="images/logo-badge.png" alt="Be Audaciously You">
       </div>
     </div>
 
@@ -2101,6 +2265,7 @@
     </div>
 
     <footer class="l0-footer">
+      <img class="logo-mark" src="images/logo-badge.png" alt="Be Audaciously You">
       <div class="logo">Be Audaciously You</div>
       <p>&copy; 2026 Be Audaciously You. All rights reserved.</p>
       <div class="dev-sig">&#9835; Built with love and drum &amp; bass by Brian Leputu</div>
@@ -2396,6 +2561,58 @@
 
     <div class="l4-spacer-lg"></div>
 
+    <section class="l4-program">
+      <div class="l4-program-header">
+        <div class="overline sr">Signature Masterclass</div>
+        <h2 class="sr">A Four-Part Journey<br>Into Audacious Style</h2>
+        <p class="sr">From discovering your signature style to curating a wardrobe with intention, the masterclass walks you through the exact framework Carol uses with her clients.</p>
+      </div>
+      <div class="l4-program-grid">
+        <div class="l4-program-card sr">
+          <span class="part">Part One</span>
+          <h3>Signature Style</h3>
+          <ul>
+            <li>What it is and why you need it</li>
+            <li>The cost of not having a personal style</li>
+            <li>Connecting style to self-love</li>
+          </ul>
+          <div class="activity">Welcome &amp; introduction</div>
+        </div>
+        <div class="l4-program-card sr sr-d1">
+          <span class="part">Part Two</span>
+          <h3>Assessments: Get to Know Yourself</h3>
+          <ul>
+            <li>Measurements and body type</li>
+            <li>Colour analysis</li>
+            <li>Lifestyle audit</li>
+          </ul>
+          <div class="activity">Activity: Style quiz &amp; three style words</div>
+        </div>
+        <div class="l4-program-card sr sr-d2">
+          <span class="part">Part Three</span>
+          <h3>Curating With Clarity</h3>
+          <ul>
+            <li>Fabric intelligence: recognise, evaluate, care</li>
+            <li>Quality finishings and cost per wear</li>
+            <li>Building a capsule wardrobe</li>
+          </ul>
+          <div class="activity">Activity: Dress like you mean it</div>
+        </div>
+        <div class="l4-program-card sr sr-d3">
+          <span class="part">Part Four</span>
+          <h3>Adorn Yourself</h3>
+          <ul>
+            <li>Personalised shopping experience</li>
+            <li>Putting the framework into practice</li>
+            <li>Walking away audaciously you</li>
+          </ul>
+          <div class="activity">One-on-one session with Carol</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="l4-spacer-lg"></div>
+
     <div class="l4-founder">
       <div class="l4-founder-img-wrap sr">
         <div class="l4-founder-img"></div>
@@ -2419,6 +2636,36 @@
         <p class="sr">In a world that often tries to fit us into predefined molds, "Be Audaciously You" challenges norms and shatters expectations. It invites individuals to step into the spotlight of their own lives with confidence and elegance.</p>
         <p class="sr">It's a declaration that being yourself is not only enough: it's everything. With each sartorial decision, members assert their right to be vibrant, complex, and undeniably themselves.</p>
         <div class="l4-btn sr">Join the Movement</div>
+      </div>
+    </section>
+
+    <div class="l4-spacer-lg"></div>
+
+    <section class="l4-events">
+      <div class="l4-events-header">
+        <div class="overline sr">Recent Events</div>
+        <h2 class="sr">Moments From<br>The Movement</h2>
+        <p class="sr">A look at the gatherings, masterclasses, and celebrations that bring the community to life.</p>
+      </div>
+      <div class="l4-events-grid">
+        <div class="l4-event-tile l4-event-tile-1 sr">
+          <div class="caption">
+            <span class="date">Feb 2026 &middot; Pretoria</span>
+            <h3>Love Is In The ERRE</h3>
+          </div>
+        </div>
+        <div class="l4-event-tile l4-event-tile-2 sr sr-d1">
+          <div class="caption">
+            <span class="date">Signature Masterclass</span>
+            <h3>Build A Signature Style</h3>
+          </div>
+        </div>
+        <div class="l4-event-tile l4-event-tile-3 sr sr-d2">
+          <div class="caption">
+            <span class="date">Grazing &amp; Connection</span>
+            <h3>A Softness Shared</h3>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -2456,6 +2703,7 @@
     </div>
 
     <footer class="l4-footer">
+      <img class="logo-mark" src="images/logo-badge.png" alt="Be Audaciously You">
       <div class="logo">Be Audaciously You</div>
       <p>&copy; 2026 Be Audaciously You. All rights reserved.</p>
       <div class="dev-sig">&#9835; Built with love and drum &amp; bass by Brian Leputu</div>
