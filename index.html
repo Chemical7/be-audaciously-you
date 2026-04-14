@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Be Audaciously You - Design Options</title>
+  <title>Be Audaciously You</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,109 +42,28 @@
       overflow-x: hidden;
     }
 
-    /* Tab bar */
-    .showcase-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 9999;
-      background: rgba(13, 13, 21, 0.95);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid rgba(201, 169, 110, 0.15);
-      display: flex;
-      align-items: center;
-      padding: 0 2rem;
-      height: 60px;
-    }
-
-    .showcase-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.95rem;
-      color: var(--gold);
-      margin-right: 3rem;
-      white-space: nowrap;
-    }
-
-    .showcase-tabs {
-      display: flex;
-      gap: 0;
-      height: 100%;
-    }
-
-    .tab-btn {
-      background: none;
-      border: none;
-      color: rgba(255,255,255,0.5);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 0 1.5rem;
-      height: 100%;
-      cursor: pointer;
-      position: relative;
-      transition: color 0.3s;
-    }
-
-    .tab-btn:hover { color: rgba(255,255,255,0.8); }
-
-    .tab-btn.active {
-      color: var(--gold);
-    }
-
-    .tab-btn.active::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 1rem;
-      right: 1rem;
-      height: 2px;
-      background: var(--gold);
-    }
-
-    .tab-subtitle {
-      display: block;
-      font-size: 0.6rem;
-      letter-spacing: 0.02em;
-      text-transform: none;
-      opacity: 0.6;
-      margin-top: 2px;
-    }
-
-    /* Layout panels */
-    .layout-panel {
-      display: none;
-      padding-top: 60px;
-    }
-
-    .layout-panel.active {
-      display: block;
-    }
-
     /* ============================================================
-       LAYOUT 0: SCROLLYTELLING
+       SCROLLYTELLING CANVAS
        One continuous dark canvas. Content floats into view.
        ============================================================ */
-    .l0 {
+    body {
       background: var(--deep-navy);
       color: var(--cream);
     }
 
     /* Scroll reveal system */
-    .l0 .sr {
+    .sr {
       opacity: 0;
       transform: translateY(40px);
       transition: opacity 0.9s ease, transform 0.9s ease;
     }
-    .l0 .sr.vis {
+    .sr.vis {
       opacity: 1;
       transform: translateY(0);
     }
-    .l0 .sr-delay-1 { transition-delay: 0.15s; }
-    .l0 .sr-delay-2 { transition-delay: 0.3s; }
-    .l0 .sr-delay-3 { transition-delay: 0.45s; }
+    .sr-delay-1 { transition-delay: 0.15s; }
+    .sr-delay-2 { transition-delay: 0.3s; }
+    .sr-delay-3 { transition-delay: 0.45s; }
 
     /* Hero: full bleed stage */
     .l0-hero {
@@ -308,6 +227,7 @@
       backdrop-filter: blur(14px);
       border: 1px solid rgba(201,169,110,0.25);
       color: var(--gold);
+      text-decoration: none;
       font-family: var(--font-display);
       font-size: 1.1rem;
       font-weight: 600;
@@ -415,7 +335,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background: url('images/community-lifestyle.jpg') center 25%/cover no-repeat;
+      background: url('images/mission-sisterhood.jpg') center/cover no-repeat;
       background-attachment: fixed;
       padding: 6rem 2rem;
     }
@@ -585,6 +505,209 @@
       letter-spacing: 0.05em;
     }
 
+    /* Masterclass Program (4-part journey) */
+    .l0-program {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      scroll-margin-top: 80px;
+    }
+    .l0-program-header { text-align: center; margin-bottom: 4rem; }
+    .l0-program-header .overline {
+      font-family: var(--font-elegant);
+      font-style: italic;
+      color: var(--hot-pink);
+      font-size: 1rem;
+    }
+    .l0-program-header h2 {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin: 0.5rem 0 1rem;
+      line-height: 1.15;
+    }
+    .l0-program-header p {
+      font-family: var(--font-elegant);
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: rgba(245,240,232,0.7);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+    .l0-program-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .l0-program-card {
+      padding: 2.5rem;
+      background: rgba(201,169,110,0.04);
+      border: 1px solid rgba(201,169,110,0.15);
+      position: relative;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .l0-program-card:hover {
+      background: rgba(201,169,110,0.08);
+      border-color: rgba(201,169,110,0.3);
+    }
+    .l0-program-card .part {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      color: var(--hot-pink);
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .l0-program-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.55rem;
+      font-weight: 400;
+      color: var(--gold-light);
+      margin-bottom: 1.25rem;
+      line-height: 1.25;
+    }
+    .l0-program-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+    }
+    .l0-program-card li {
+      font-family: var(--font-elegant);
+      font-size: 1.02rem;
+      line-height: 1.9;
+      color: rgba(245,240,232,0.72);
+      padding-left: 1.3rem;
+      position: relative;
+    }
+    .l0-program-card li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.85em;
+      width: 0.7rem;
+      height: 1px;
+      background: var(--gold);
+    }
+    .l0-program-card .activity {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(201,169,110,0.15);
+      font-family: var(--font-elegant);
+      font-style: italic;
+      font-size: 0.98rem;
+      color: var(--hot-pink);
+    }
+
+    /* Recent Events gallery */
+    .l0-events {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      scroll-margin-top: 80px;
+    }
+    .l0-events-header { text-align: center; margin-bottom: 3rem; }
+    .l0-events-header .overline {
+      font-family: var(--font-elegant);
+      font-style: italic;
+      color: var(--hot-pink);
+      font-size: 1rem;
+    }
+    .l0-events-header h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin: 0.5rem 0 1rem;
+      line-height: 1.2;
+    }
+    .l0-events-header p {
+      font-family: var(--font-elegant);
+      font-size: 1.1rem;
+      color: rgba(245,240,232,0.65);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .l0-events-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .l0-event-tile {
+      position: relative;
+      aspect-ratio: 3/4;
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+      transition: transform 0.5s ease;
+    }
+    .l0-event-tile:hover { transform: translateY(-6px); }
+    .l0-event-tile::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 45%, rgba(32,30,29,0.92) 100%);
+    }
+    .l0-event-tile .caption {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      right: 1.5rem;
+      z-index: 2;
+    }
+    .l0-event-tile .caption .date {
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--hot-pink);
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .l0-event-tile .caption h3 {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.3;
+      margin: 0;
+    }
+    .l0-event-tile-1 { background-image: url('images/event-erre-duo.jpg'); }
+    .l0-event-tile-2 { background-image: url('images/community-masterclass.jpg'); }
+    .l0-event-tile-3 { background-image: url('images/event-grazing.jpg'); }
+
+    /* Service detail stubs (Personal Styling / Beauty / Retreat) */
+    .l0-service-detail {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      text-align: center;
+      scroll-margin-top: 80px;
+    }
+    .l0-service-detail .overline {
+      font-family: var(--font-elegant);
+      font-style: italic;
+      color: var(--hot-pink);
+      font-size: 1rem;
+      letter-spacing: 0.05em;
+    }
+    .l0-service-detail h2 {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--gold);
+      margin: 0.5rem 0 1.5rem;
+      line-height: 1.2;
+    }
+    .l0-service-detail p {
+      font-family: var(--font-elegant);
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: rgba(245,240,232,0.72);
+      margin-bottom: 1rem;
+    }
+
     /* Responsive */
     @media (max-width: 900px) {
       .l0-founder { grid-template-columns: 1fr; gap: 3rem; }
@@ -593,6 +716,9 @@
       .l0-service-tag { min-width: 130px; flex: 1 1 40%; }
       .l0-form .form-row { grid-template-columns: 1fr; }
       .l0-hero, .l0-services, .l0-vision { background-attachment: scroll; }
+      .l0-program-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .l0-events-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .l0-event-tile { aspect-ratio: 16/10; }
     }
 
     /* Shared placeholder image styles */
@@ -616,1531 +742,16 @@
       border-radius: 3px;
     }
 
-    /* ============================================================
-       LAYOUT 1: LUXE EDITORIAL
-       ============================================================ */
-    .l1 { background: var(--soft-white); color: var(--charcoal); }
-
-    .l1-hero {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      position: relative;
-    }
-
-    .l1-hero-left {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6rem 4rem 6rem 6rem;
-      background: var(--soft-white);
-    }
-
-    .l1-hero-left .overline {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--hot-pink);
-      margin-bottom: 2rem;
-    }
-
-    .l1-hero-left h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 4.5rem;
-      line-height: 1.05;
-      color: var(--charcoal);
-      font-weight: 400;
-      margin-bottom: 2rem;
-    }
-
-    .l1-hero-left h1 em {
-      font-style: italic;
-      color: var(--gold);
-    }
-
-    .l1-hero-left p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      line-height: 1.6;
-      color: #555;
-      max-width: 440px;
-      margin-bottom: 3rem;
-    }
-
-    .l1-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 1rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--charcoal);
-      border-bottom: 1px solid var(--charcoal);
-      padding-bottom: 0.5rem;
-      width: fit-content;
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-
-    .l1-btn:hover { color: var(--gold); border-color: var(--gold); }
-
-    .l1-btn svg { width: 20px; height: 20px; stroke: currentColor; transition: transform 0.3s; }
-    .l1-btn:hover svg { transform: translateX(4px); }
-
-    .l1-hero-right {
-      position: relative;
-      background: url('images/hero-editorial.jpg') center 20%/cover no-repeat;
-      overflow: hidden;
-    }
-
-    .l1-hero-right::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, var(--soft-white) 0%, transparent 15%);
-    }
-
-    /* Editorial strip */
-    .l1-strip {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--cream-dark);
-      border-bottom: 1px solid var(--cream-dark);
-    }
-
-    .l1-strip-item {
-      padding: 3rem 2rem;
-      text-align: center;
-      border-right: 1px solid var(--cream-dark);
-      transition: background 0.3s;
-    }
-
-    .l1-strip-item:last-child { border-right: none; }
-    .l1-strip-item:hover { background: var(--cream); }
-
-    .l1-strip-item .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      color: var(--gold);
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .l1-strip-item h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 400;
-      margin-bottom: 0.5rem;
-    }
-
-    .l1-strip-item p {
-      font-size: 0.8rem;
-      color: #888;
-      line-height: 1.5;
-    }
-
-    /* About */
-    .l1-about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 80vh;
-    }
-
-    .l1-about-img {
-      background: url('images/community-lifestyle.jpg') center 25%/cover no-repeat;
-      position: relative;
-    }
-
-    .l1-about-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 6rem;
-    }
-
-    .l1-about-text .overline {
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--hot-pink);
-      margin-bottom: 1.5rem;
-    }
-
-    .l1-about-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      font-weight: 400;
-      line-height: 1.15;
-      margin-bottom: 2rem;
-    }
-
-    .l1-about-text p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-
-    /* Founder */
-    .l1-founder {
-      padding: 8rem 6rem;
-      background: var(--charcoal);
-      color: var(--cream);
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .l1-founder-img {
-      aspect-ratio: 3/4;
-      background: url('images/founder-portrait.jpg') center/cover no-repeat;
-      position: relative;
-      border: 1px solid rgba(201, 169, 110, 0.2);
-    }
-
-    .l1-founder-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 400;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
-
-    .l1-founder-text .subtitle {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.1rem;
-      color: var(--gold-muted);
-      margin-bottom: 2rem;
-    }
-
-    .l1-founder-text p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--cream-dark);
-      margin-bottom: 1.2rem;
-    }
-
-    .l1-founder-text blockquote {
-      margin-top: 2rem;
-      padding: 1.5rem 0;
-      border-top: 1px solid var(--gold-muted);
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.2rem;
-      color: var(--gold-light);
-      line-height: 1.5;
-    }
-
-    /* CTA */
-    .l1-cta {
-      padding: 8rem 2rem;
-      text-align: center;
-      background: var(--cream);
-    }
-
-    .l1-cta h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      font-weight: 400;
-      color: var(--charcoal);
-      margin-bottom: 1rem;
-    }
-
-    .l1-cta p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      color: #666;
-      margin-bottom: 2.5rem;
-    }
-
-    .l1-cta-btn {
-      display: inline-block;
-      padding: 1rem 3rem;
-      background: var(--charcoal);
-      color: var(--gold);
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-
-    .l1-cta-btn:hover { background: var(--gold); color: var(--charcoal); }
-
-    .l1-sig {
-      margin-top: 3rem;
-      font-size: 0.65rem;
-      color: #aaa;
-      letter-spacing: 0.05em;
-    }
-
-
-    /* ============================================================
-       LAYOUT 2: MODERN WARM
-       ============================================================ */
-    .l2 { background: var(--champagne); color: var(--charcoal); }
-
-    /* Hero: full-width image with warm overlay + text bottom-left */
-    .l2-hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      overflow: hidden;
-      background: url('images/hero-editorial.jpg') center top/cover no-repeat;
-    }
-
-    .l2-hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(0deg, rgba(26,26,46,0.85) 0%, rgba(26,26,46,0.3) 40%, transparent 70%);
-    }
-
-    .l2-hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 4rem 5rem 5rem;
-      max-width: 700px;
-    }
-
-    .l2-hero-content .overline {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 1.5rem;
-    }
-
-    .l2-hero-content h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 6vw, 5rem);
-      font-weight: 600;
-      line-height: 1.05;
-      color: #fff;
-      margin-bottom: 1.5rem;
-    }
-
-    .l2-hero-content h1 span {
-      color: var(--gold);
-    }
-
-    .l2-hero-content p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.8);
-      max-width: 480px;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-
-    .l2-btn {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      background: var(--gold);
-      color: var(--charcoal);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-
-    .l2-btn:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(201, 169, 110, 0.3);
-    }
-
-    /* Community band */
-    .l2-community-band {
-      width: 100%;
-      height: 400px;
-      background: url('images/community-lifestyle.jpg') center 20%/cover no-repeat;
-      position: relative;
-    }
-
-    .l2-community-band::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, var(--champagne) 0%, transparent 20%, transparent 80%, var(--champagne) 100%);
-    }
-
-    /* About: overlapping card on warm bg */
-    .l2-about {
-      padding: 6rem 2rem;
-      max-width: 900px;
-      margin: -80px auto 0;
-      position: relative;
-      z-index: 3;
-      background: #fff;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.06);
-      text-align: center;
-    }
-
-    .l2-about-inner {
-      padding: 3rem 4rem;
-    }
-
-    .l2-about .overline {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--hot-pink);
-      margin-bottom: 1rem;
-    }
-
-    .l2-about h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-      color: var(--charcoal);
-    }
-
-    .l2-about p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: #555;
-      margin-bottom: 1rem;
-      max-width: 650px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .l2-about p strong { color: var(--charcoal); }
-
-    /* Services: horizontal scroll of warm cards */
-    .l2-services {
-      padding: 6rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .l2-services-header {
-      text-align: center;
-      margin-bottom: 3rem;
-    }
-
-    .l2-services-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      font-weight: 400;
-      color: var(--charcoal);
-    }
-
-    .l2-services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-
-    .l2-service-card {
-      background: #fff;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      border-bottom: 3px solid transparent;
-      transition: all 0.4s;
-      cursor: default;
-    }
-
-    .l2-service-card:hover {
-      border-bottom-color: var(--gold);
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.06);
-    }
-
-    .l2-service-card .icon {
-      width: 60px;
-      height: 60px;
-      margin: 0 auto 1.5rem;
-      background: var(--champagne);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-    }
-
-    .l2-service-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      color: var(--charcoal);
-    }
-
-    .l2-service-card p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem;
-      line-height: 1.6;
-      color: #888;
-    }
-
-    /* Founder: side-by-side with warm bg */
-    .l2-founder {
-      padding: 6rem 2rem;
-      background: var(--tan);
-    }
-
-    .l2-founder-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1.5fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .l2-founder-img {
-      aspect-ratio: 3/4;
-      background: url('images/founder-portrait.jpg') center/cover no-repeat;
-      position: relative;
-      box-shadow: 20px 20px 0 var(--gold);
-    }
-
-    .l2-founder-text h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: var(--charcoal);
-      margin-bottom: 0.5rem;
-    }
-
-    .l2-founder-text .subtitle {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
-      color: #666;
-      font-style: italic;
-      margin-bottom: 2rem;
-    }
-
-    .l2-founder-text p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.92rem;
-      line-height: 1.8;
-      color: #444;
-      margin-bottom: 1rem;
-    }
-
-    .l2-founder-text blockquote {
-      margin-top: 2rem;
-      padding: 1.5rem 0;
-      border-top: 1px solid var(--gold);
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.2rem;
-      color: var(--charcoal);
-      line-height: 1.6;
-    }
-
-    /* CTA */
-    .l2-cta {
-      padding: 8rem 2rem;
-      text-align: center;
-      background: var(--charcoal);
-      color: var(--cream);
-    }
-
-    .l2-cta h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-weight: 400;
-      color: var(--gold);
-      margin-bottom: 1rem;
-    }
-
-    .l2-cta p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.05rem;
-      color: var(--cream-dark);
-      margin-bottom: 2.5rem;
-    }
-
-
-    /* ============================================================
-       LAYOUT 3: WARM & INTIMATE
-       ============================================================ */
-    .l3 { background: var(--cream); color: var(--charcoal); }
-
-    .l3-hero {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 6rem 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .l3-hero-bg {
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 80% 60% at 50% 40%, var(--champagne), transparent),
-        radial-gradient(ellipse 50% 40% at 20% 80%, var(--rose), transparent),
-        radial-gradient(ellipse 50% 40% at 80% 80%, rgba(201, 169, 110, 0.2), transparent);
-    }
-
-    /* Organic floating shapes */
-    .l3-organic {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.12;
-    }
-
-    .l3-organic:nth-child(1) {
-      width: 500px;
-      height: 500px;
-      top: -150px;
-      left: -100px;
-      background: var(--rose);
-      border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
-      animation: morph1 15s ease-in-out infinite;
-    }
-
-    .l3-organic:nth-child(2) {
-      width: 350px;
-      height: 350px;
-      bottom: -50px;
-      right: -50px;
-      background: var(--gold-light);
-      border-radius: 40% 60% 30% 70% / 60% 40% 50% 50%;
-      animation: morph2 12s ease-in-out infinite;
-    }
-
-    .l3-organic:nth-child(3) {
-      width: 200px;
-      height: 200px;
-      top: 30%;
-      right: 15%;
-      background: var(--hot-pink);
-      opacity: 0.06;
-      border-radius: 50% 60% 40% 50% / 40% 50% 60% 50%;
-      animation: morph1 18s ease-in-out infinite reverse;
-    }
-
-    @keyframes morph1 {
-      0%, 100% { border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%; }
-      50% { border-radius: 40% 60% 30% 70% / 60% 40% 50% 50%; }
-    }
-
-    @keyframes morph2 {
-      0%, 100% { border-radius: 40% 60% 30% 70% / 60% 40% 50% 50%; }
-      50% { border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%; }
-    }
-
-    .l3-hero-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .l3-hero-content .overline {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.75rem;
-      font-weight: 500;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--hot-pink);
-      margin-bottom: 2rem;
-    }
-
-    .l3-hero-content h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 7vw, 5.5rem);
-      font-weight: 300;
-      line-height: 1.1;
-      color: var(--charcoal);
-      margin-bottom: 2rem;
-    }
-
-    .l3-hero-content h1 strong {
-      font-weight: 600;
-      color: var(--gold);
-    }
-
-    .l3-hero-content p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.1rem;
-      font-weight: 300;
-      color: #666;
-      max-width: 500px;
-      margin: 0 auto 3rem;
-      line-height: 1.7;
-    }
-
-    .l3-btn {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      background: var(--charcoal);
-      color: var(--cream);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      border-radius: 50px;
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-
-    .l3-btn:hover {
-      background: var(--gold);
-      color: var(--charcoal);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(201, 169, 110, 0.2);
-    }
-
-    /* Soft cards */
-    .l3-services {
-      padding: 6rem 2rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .l3-services-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .l3-services-header h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-weight: 400;
-    }
-
-    .l3-services-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-
-    .l3-service-card {
-      background: #fff;
-      border-radius: 24px;
-      padding: 2.5rem 1.5rem;
-      text-align: center;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-      transition: all 0.4s;
-      cursor: default;
-    }
-
-    .l3-service-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-    }
-
-    .l3-service-icon {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 1.5rem;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-    }
-
-    .l3-service-card:nth-child(1) .l3-service-icon { background: var(--champagne); }
-    .l3-service-card:nth-child(2) .l3-service-icon { background: var(--rose); }
-    .l3-service-card:nth-child(3) .l3-service-icon { background: rgba(201, 169, 110, 0.15); }
-    .l3-service-card:nth-child(4) .l3-service-icon { background: rgba(214, 51, 108, 0.08); }
-
-    .l3-service-card h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .l3-service-card p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem;
-      color: #888;
-      line-height: 1.6;
-    }
-
-    /* About - warm */
-    .l3-about {
-      padding: 6rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .l3-about-img {
-      aspect-ratio: 1;
-      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-      background: url('images/fashion-detail.jpg') center/cover no-repeat;
-      position: relative;
-    }
-
-    .l3-about-text h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
-      font-weight: 400;
-      margin-bottom: 1.5rem;
-    }
-
-    .l3-about-text p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.92rem;
-      line-height: 1.8;
-      color: #555;
-      margin-bottom: 1rem;
-    }
-
-    /* Founder */
-    .l3-founder {
-      padding: 6rem 2rem;
-      background: var(--charcoal);
-      color: var(--cream);
-    }
-
-    .l3-founder-inner {
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .l3-founder-portrait {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      margin: 0 auto 2rem;
-      background: url('images/founder-portrait.jpg') center/cover no-repeat;
-      border: 3px solid var(--gold);
-      position: relative;
-    }
-
-    .l3-founder-inner h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      font-weight: 400;
-      color: var(--gold);
-      margin-bottom: 0.5rem;
-    }
-
-    .l3-founder-inner .subtitle {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.85rem;
-      color: var(--gold-muted);
-      margin-bottom: 2rem;
-    }
-
-    .l3-founder-inner p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.92rem;
-      line-height: 1.8;
-      color: var(--cream-dark);
-      max-width: 700px;
-      margin: 0 auto 1rem;
-    }
-
-    .l3-founder-inner blockquote {
-      margin: 2rem auto 0;
-      max-width: 600px;
-      padding: 1.5rem 2rem;
-      background: rgba(201, 169, 110, 0.05);
-      border-radius: 16px;
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1.2rem;
-      color: var(--gold-light);
-      line-height: 1.6;
-    }
-
-    /* CTA */
-    .l3-cta {
-      padding: 8rem 2rem;
-      text-align: center;
-      background: var(--champagne);
-    }
-
-    .l3-cta h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.5rem;
-      font-weight: 400;
-      margin-bottom: 1rem;
-    }
-
-    .l3-cta p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1rem;
-      color: #666;
-      margin-bottom: 2.5rem;
-    }
-
-
-    /* ============================================================
-       LAYOUT 4: CAROL'S PICK (HYBRID)
-       B's hero + A's editorial + scrollytelling reveals + mission
-       ============================================================ */
-    .l4 { background: var(--deep-navy); color: var(--cream); }
-
-    .l4 .sr {
-      opacity: 0;
-      transform: translateY(35px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    .l4 .sr.vis { opacity: 1; transform: translateY(0); }
-    .l4 .sr-d1 { transition-delay: 0.15s; }
-    .l4 .sr-d2 { transition-delay: 0.3s; }
-    .l4 .sr-d3 { transition-delay: 0.45s; }
-
-    /* Hero: B-style full-bleed image, text bottom-left */
-    .l4-hero {
-      height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: flex-end;
-      background: url('images/hero-editorial.jpg') center top/cover no-repeat;
-      background-attachment: fixed;
-    }
-
-    .l4-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(0deg, var(--deep-navy) 0%, rgba(32,30,29,0.5) 35%, transparent 65%),
-        linear-gradient(90deg, rgba(32,30,29,0.6) 0%, transparent 50%);
-    }
-
-    .l4-hero-content {
-      position: relative;
-      z-index: 2;
-      padding: 0 5rem 6rem;
-      max-width: 700px;
-    }
-
-    .l4-hero-content h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(3rem, 6vw, 5rem);
-      font-weight: 600;
-      line-height: 1.05;
-      color: #fff;
-      margin-bottom: 1.5rem;
-    }
-
-    .l4-hero-content h1 span { color: var(--gold-light); }
-
-    .l4-hero-content p {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 300;
-      color: rgba(255,255,255,0.8);
-      max-width: 460px;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
-    }
-
-    .l4-btn {
-      display: inline-block;
-      padding: 0.9rem 2.5rem;
-      background: var(--gold);
-      color: var(--charcoal);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      transition: all 0.3s;
-      cursor: pointer;
-    }
-
-    .l4-btn:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(181,162,129,0.3);
-    }
-
-    /* Spacers */
-    .l4-spacer { height: 10vh; }
-    .l4-spacer-lg { height: 15vh; }
-
-    /* About: A-style editorial split on dark canvas */
-    .l4-about {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .l4-about-text .overline {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      color: var(--hot-pink);
-      font-style: italic;
-      letter-spacing: 0.05em;
-    }
-
-    .l4-about-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      font-weight: 400;
-      color: var(--gold);
-      line-height: 1.15;
-      margin: 0.5rem 0 2rem;
-    }
-
-    .l4-about-text p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: rgba(231,222,217,0.7);
-      margin-bottom: 1rem;
-    }
-
-    .l4-about-text p strong { color: var(--gold-light); font-weight: 600; }
-
-    .l4-about-img {
-      aspect-ratio: 1;
-      background: url('images/community-lifestyle.jpg') center/cover no-repeat;
-      position: relative;
-    }
-
-    .l4-about-img::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border: 1px solid rgba(181,162,129,0.15);
-    }
-
-    /* Services: A-style numbered strip on dark */
-    .l4-strip {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-    }
-
-    .l4-strip-item {
-      padding: 3rem 1.5rem;
-      text-align: center;
-      border-right: 1px solid rgba(181,162,129,0.1);
-      transition: background 0.3s;
-    }
-
-    .l4-strip-item:last-child { border-right: none; }
-    .l4-strip-item:hover { background: rgba(181,162,129,0.05); }
-
-    .l4-strip-item .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      color: var(--gold-light);
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-
-    .l4-strip-item h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: var(--cream);
-      margin-bottom: 0.5rem;
-    }
-
-    .l4-strip-item p {
-      font-size: 0.8rem;
-      color: rgba(231,222,217,0.45);
-      line-height: 1.5;
-    }
-
-    /* Founder: editorial side-by-side on dark */
-    .l4-founder {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: 4rem;
-      align-items: center;
-    }
-
-    .l4-founder-img-wrap { position: relative; }
-
-    .l4-founder-img {
-      aspect-ratio: 3/4;
-      background: url('images/founder-portrait.jpg') center/cover no-repeat;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
-    }
-
-    .l4-founder-img-accent {
-      position: absolute;
-      bottom: -14px;
-      right: -14px;
-      width: 100%;
-      height: 100%;
-      border: 1px solid rgba(181,162,129,0.2);
-      z-index: -1;
-    }
-
-    .l4-founder-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 400;
-      color: var(--gold);
-      margin-bottom: 0.25rem;
-    }
-
-    .l4-founder-text .subtitle {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 1rem;
-      color: var(--gold-muted);
-      margin-bottom: 2rem;
-    }
-
-    .l4-founder-text p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: rgba(231,222,217,0.65);
-      margin-bottom: 1rem;
-    }
-
-    .l4-founder-text blockquote {
-      margin-top: 2rem;
-      padding: 1.5rem 0;
-      border-top: 1px solid rgba(181,162,129,0.2);
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 1.15rem;
-      color: var(--gold-light);
-      line-height: 1.5;
-    }
-
-    /* Mission: parallax window with dark overlay (was missing from A) */
-    .l4-mission {
-      position: relative;
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: url('images/fashion-flatlay.jpg') center/cover no-repeat;
-      background-attachment: fixed;
-      padding: 6rem 2rem;
-    }
-
-    .l4-mission::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(32,30,29,0.78);
-      backdrop-filter: blur(3px);
-    }
-
-    .l4-mission-content {
-      position: relative;
-      z-index: 2;
-      max-width: 700px;
-      text-align: center;
-    }
-
-    .l4-mission-content h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      font-weight: 400;
-      color: var(--gold-light);
-      margin-bottom: 2rem;
-      font-style: italic;
-    }
-
-    .l4-mission-content p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      line-height: 1.9;
-      color: rgba(231,222,217,0.75);
-      margin-bottom: 1.2rem;
-    }
-
-    .l4-mission-content .l4-btn { margin-top: 1.5rem; }
-
-    /* Contact on dark canvas */
-    .l4-contact {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-    }
-
-    .l4-contact-info h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      color: var(--gold);
-      font-weight: 400;
-      margin-bottom: 1rem;
-    }
-
-    .l4-contact-info p {
-      color: rgba(231,222,217,0.6);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 2rem;
-    }
-
-    .l4-contact-detail {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .l4-contact-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 50%;
-      background: rgba(181,162,129,0.06);
-      border: 1px solid rgba(181,162,129,0.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .l4-contact-icon svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
-    .l4-contact-detail span { color: var(--cream); font-size: 0.95rem; }
-
-    .l4-contact-social {
-      display: flex;
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .l4-contact-social a {
-      width: 44px; height: 44px; border-radius: 50%;
-      border: 1px solid rgba(181,162,129,0.2);
-      display: flex; align-items: center; justify-content: center;
-      transition: all 0.3s;
-    }
-    .l4-contact-social a:hover { background: var(--gold); border-color: var(--gold); }
-    .l4-contact-social a:hover svg { stroke: var(--charcoal); }
-    .l4-contact-social svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
-
-    .l4-form {
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(181,162,129,0.12);
-      padding: 2.5rem;
-    }
-
-    .l4-form h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      color: var(--gold);
-      margin-bottom: 1.5rem;
-      font-weight: 400;
-    }
-
-    .l4-form .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .l4-form .form-group { margin-bottom: 1.25rem; }
-
-    .l4-form label {
-      display: block; font-size: 0.7rem; color: var(--gold-muted);
-      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.5rem;
-    }
-
-    .l4-form input, .l4-form textarea {
-      width: 100%; padding: 0.8rem 1rem;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(181,162,129,0.15);
-      color: var(--cream); font-family: 'Inter', sans-serif;
-      font-size: 0.9rem; transition: border-color 0.3s; outline: none;
-    }
-
-    .l4-form input:focus, .l4-form textarea:focus { border-color: var(--gold); }
-    .l4-form textarea { resize: vertical; min-height: 100px; }
-    .l4-form input::placeholder, .l4-form textarea::placeholder { color: rgba(231,222,217,0.2); }
-    .l4-form .l4-btn { width: 100%; text-align: center; }
-
-    .l4-footer {
-      padding: 4rem 2rem 3rem;
-      text-align: center;
-    }
-
-    .l4-footer .logo-mark { width: 84px; height: 84px; display: block; margin: 0 auto 1rem; }
-    .l4-footer .logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--gold); margin-bottom: 1rem; }
-    .l4-footer p { color: rgba(231,222,217,0.3); font-size: 0.75rem; }
-    .l4-footer .dev-sig {
-      margin-top: 1.5rem; padding-top: 1.5rem;
-      border-top: 1px solid rgba(181,162,129,0.06);
-      font-size: 0.65rem; color: rgba(231,222,217,0.2); letter-spacing: 0.05em;
-    }
-
-    /* Masterclass Program */
-    .l4-program {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    .l4-program-header { text-align: center; margin-bottom: 4rem; }
-    .l4-program-header .overline {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      color: var(--hot-pink);
-      font-size: 1rem;
-    }
-    .l4-program-header h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      font-weight: 400;
-      color: var(--gold);
-      margin: 0.5rem 0 1rem;
-      line-height: 1.15;
-    }
-    .l4-program-header p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: rgba(231,222,217,0.7);
-      max-width: 620px;
-      margin: 0 auto;
-    }
-    .l4-program-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2rem;
-    }
-    .l4-program-card {
-      padding: 2.5rem;
-      background: rgba(181,162,129,0.04);
-      border: 1px solid rgba(181,162,129,0.15);
-      position: relative;
-      transition: background 0.3s, border-color 0.3s;
-    }
-    .l4-program-card:hover {
-      background: rgba(181,162,129,0.08);
-      border-color: rgba(181,162,129,0.3);
-    }
-    .l4-program-card .part {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.25em;
-      color: var(--hot-pink);
-      text-transform: uppercase;
-      margin-bottom: 0.6rem;
-      display: block;
-    }
-    .l4-program-card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.55rem;
-      font-weight: 400;
-      color: var(--gold-light);
-      margin-bottom: 1.25rem;
-      line-height: 1.25;
-    }
-    .l4-program-card ul {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 1.25rem;
-    }
-    .l4-program-card li {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.02rem;
-      line-height: 1.9;
-      color: rgba(231,222,217,0.72);
-      padding-left: 1.3rem;
-      position: relative;
-    }
-    .l4-program-card li::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0.85em;
-      width: 0.7rem;
-      height: 1px;
-      background: var(--gold);
-    }
-    .l4-program-card .activity {
-      margin-top: 1.25rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid rgba(181,162,129,0.15);
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 0.98rem;
-      color: var(--hot-pink);
-    }
-
-    /* Recent Events gallery */
-    .l4-events {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-    .l4-events-header { text-align: center; margin-bottom: 3rem; }
-    .l4-events-header .overline {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      color: var(--hot-pink);
-      font-size: 1rem;
-    }
-    .l4-events-header h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 400;
-      color: var(--gold);
-      margin: 0.5rem 0 1rem;
-    }
-    .l4-events-header p {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
-      color: rgba(231,222,217,0.65);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .l4-events-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-    }
-    .l4-event-tile {
-      position: relative;
-      aspect-ratio: 3/4;
-      background-size: cover;
-      background-position: center;
-      overflow: hidden;
-      transition: transform 0.5s ease;
-    }
-    .l4-event-tile:hover { transform: translateY(-6px); }
-    .l4-event-tile::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, transparent 45%, rgba(15,17,24,0.92) 100%);
-    }
-    .l4-event-tile .caption {
-      position: absolute;
-      bottom: 1.5rem;
-      left: 1.5rem;
-      right: 1.5rem;
-      z-index: 2;
-    }
-    .l4-event-tile .caption .date {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--hot-pink);
-      display: block;
-      margin-bottom: 0.4rem;
-    }
-    .l4-event-tile .caption h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 400;
-      color: #fff;
-      line-height: 1.3;
-      margin: 0;
-    }
-    .l4-event-tile-1 { background-image: url('images/event-erre-duo.jpg'); }
-    .l4-event-tile-2 { background-image: url('images/community-masterclass.jpg'); }
-    .l4-event-tile-3 { background-image: url('images/event-grazing.jpg'); }
-
-    /* ============================================================
-       RESPONSIVE
-       ============================================================ */
-    @media (max-width: 900px) {
-      .l1-hero { grid-template-columns: 1fr; }
-      .l1-hero-right { min-height: 50vh; }
-      .l1-hero-left { padding: 4rem 2rem; }
-      .l1-hero-left h1 { font-size: 3rem; }
-      .l1-strip { grid-template-columns: repeat(2, 1fr); }
-      .l1-about { grid-template-columns: 1fr; }
-      .l1-about-img { min-height: 50vh; }
-      .l1-about-text { padding: 3rem 2rem; }
-      .l1-founder { grid-template-columns: 1fr; padding: 4rem 2rem; }
-
-      .l2-services-grid { grid-template-columns: repeat(2, 1fr); }
-      .l2-founder-inner { grid-template-columns: 1fr; }
-      .l2-about-inner { padding: 2rem; }
-      .l2-hero-content { padding: 3rem 2rem 4rem; }
-
-      .l3-services-grid { grid-template-columns: repeat(2, 1fr); }
-      .l3-about { grid-template-columns: 1fr; text-align: center; }
-
-      .l4-about { grid-template-columns: 1fr; }
-      .l4-program-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      .l4-events-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-      .l4-event-tile { aspect-ratio: 16/10; }
-      .l4-strip { grid-template-columns: repeat(2, 1fr); }
-      .l4-founder { grid-template-columns: 1fr; }
-      .l4-contact { grid-template-columns: 1fr; }
-      .l4-hero-content { padding: 0 2rem 4rem; }
-      .l4-form .form-row { grid-template-columns: 1fr; }
-      .l4-hero, .l4-mission { background-attachment: scroll; }
-    }
-
-    @media (max-width: 600px) {
-      .showcase-title { display: none; }
-      .tab-btn { padding: 0 0.8rem; font-size: 0.7rem; }
-      .l1-strip { grid-template-columns: 1fr; }
-      .l2-services-grid { grid-template-columns: 1fr; }
-      .l3-services-grid { grid-template-columns: 1fr; }
-      .l4-strip { grid-template-columns: 1fr; }
-    }
   </style>
 </head>
 <body>
 
-  <!-- ============================================================
-       SHOWCASE TAB BAR
-       ============================================================ -->
-  <div class="showcase-bar">
-    <div class="showcase-title">Design Options</div>
-    <div class="showcase-tabs">
-      <button class="tab-btn active" data-tab="original">
-        Your Vision
-        <span class="tab-subtitle">Faithfully Built</span>
-      </button>
-      <button class="tab-btn" data-tab="layout1">
-        Option A
-        <span class="tab-subtitle">Luxe Editorial</span>
-      </button>
-      <button class="tab-btn" data-tab="layout2">
-        Option B
-        <span class="tab-subtitle">Modern Warm</span>
-      </button>
-      <button class="tab-btn" data-tab="layout3">
-        Option C
-        <span class="tab-subtitle">Warm & Intimate</span>
-      </button>
-      <button class="tab-btn" data-tab="layout4" style="border-left:1px solid rgba(181,162,129,0.2);">
-        Carol's Pick
-        <span class="tab-subtitle">The Best of Everything</span>
-      </button>
-    </div>
-  </div>
 
   <!-- ============================================================
        HER DESIGN: SCROLLYTELLING
        One dark canvas. Content floats into view.
        ============================================================ -->
-  <div class="layout-panel l0 active" id="original">
-
+  
     <section class="l0-hero">
       <div class="l0-hero-content">
         <h1 class="sr">Be Audaciously<br>You</h1>
@@ -2171,12 +782,118 @@
 
     <div class="l0-spacer-lg"></div>
 
-    <section class="l0-services">
+    <section class="l0-services" id="services">
       <div class="l0-services-inner">
-        <div class="l0-service-tag sr">Masterclasses<span>Style &amp; confidence</span></div>
-        <div class="l0-service-tag sr sr-delay-1">Events<span>Connect &amp; celebrate</span></div>
-        <div class="l0-service-tag sr sr-delay-2">Gallery<span>Visual inspiration</span></div>
-        <div class="l0-service-tag sr sr-delay-3">Community<span>Grow together</span></div>
+        <a href="#personal-styling" class="l0-service-tag sr">Personal Styling<span>Curate your personal style</span></a>
+        <a href="#masterclass" class="l0-service-tag sr sr-delay-1">Masterclass<span>Mindset &amp; NLP coaching</span></a>
+        <a href="#beauty" class="l0-service-tag sr sr-delay-2">Beauty<span>Makeup &amp; skincare</span></a>
+        <a href="#retreat" class="l0-service-tag sr sr-delay-3">Rest &amp; Retreat<span>Curated luxury getaways</span></a>
+      </div>
+    </section>
+
+    <div class="l0-spacer-lg"></div>
+
+    <section class="l0-service-detail" id="personal-styling">
+      <div class="overline sr">Personal Styling</div>
+      <h2 class="sr">Curate Your Personal Style</h2>
+      <p class="sr">Personal style is how you show up in the world. One-on-one styling sessions to discover the colours, cuts, and silhouettes that tell your story, so every time you get dressed, you are dressing the woman you are becoming.</p>
+    </section>
+
+    <div class="l0-spacer-lg"></div>
+
+    <section class="l0-program" id="masterclass">
+      <div class="l0-program-header">
+        <div class="overline sr">Signature Masterclass</div>
+        <h2 class="sr">A Four-Part Journey<br>Into Audacious Style</h2>
+        <p class="sr">From discovering your signature style to curating a wardrobe with intention, the masterclass walks you through the exact framework Carol uses with her clients. Grounded in mindset and NLP coaching, it is as much about how you think as what you wear.</p>
+      </div>
+      <div class="l0-program-grid">
+        <div class="l0-program-card sr">
+          <span class="part">Part One</span>
+          <h3>Signature Style</h3>
+          <ul>
+            <li>What it is and why you need it</li>
+            <li>The cost of not having a personal style</li>
+            <li>Connecting style to self-love</li>
+          </ul>
+          <div class="activity">Welcome &amp; introduction</div>
+        </div>
+        <div class="l0-program-card sr sr-delay-1">
+          <span class="part">Part Two</span>
+          <h3>Assessments: Get to Know Yourself</h3>
+          <ul>
+            <li>Measurements and body type</li>
+            <li>Colour analysis</li>
+            <li>Lifestyle audit</li>
+          </ul>
+          <div class="activity">Activity: Style quiz &amp; three style words</div>
+        </div>
+        <div class="l0-program-card sr sr-delay-2">
+          <span class="part">Part Three</span>
+          <h3>Curating With Clarity</h3>
+          <ul>
+            <li>Fabric intelligence: recognise, evaluate, care</li>
+            <li>Quality finishings and cost per wear</li>
+            <li>Building a capsule wardrobe</li>
+          </ul>
+          <div class="activity">Activity: Dress like you mean it</div>
+        </div>
+        <div class="l0-program-card sr sr-delay-3">
+          <span class="part">Part Four</span>
+          <h3>Adorn Yourself</h3>
+          <ul>
+            <li>Personalised shopping experience</li>
+            <li>Putting the framework into practice</li>
+            <li>Walking away audaciously you</li>
+          </ul>
+          <div class="activity">One-on-one session with Carol</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="l0-spacer-lg"></div>
+
+    <section class="l0-service-detail" id="beauty">
+      <div class="overline sr">Beauty</div>
+      <h2 class="sr">Makeup &amp; Skincare</h2>
+      <p class="sr">What's underneath matters as much as what's on top. Rituals and techniques grounded in feminine energy, designed to help you feel as beautiful as you look, one intentional layer at a time.</p>
+    </section>
+
+    <div class="l0-spacer-lg"></div>
+
+    <section class="l0-service-detail" id="retreat">
+      <div class="overline sr">Rest &amp; Retreat</div>
+      <h2 class="sr">Curated Luxury Getaways</h2>
+      <p class="sr">Intentional weekend retreats designed for rest, relaxation, and reconnection. Quiet spaces to breathe, reset, and return to the audacious community of women walking this journey beside you.</p>
+    </section>
+
+    <div class="l0-spacer-lg"></div>
+
+    <section class="l0-events" id="events">
+      <div class="l0-events-header">
+        <div class="overline sr">Recent Events</div>
+        <h2 class="sr">Moments From<br>The Movement</h2>
+        <p class="sr">A glimpse of the gatherings, masterclasses, and celebrations that bring the community to life.</p>
+      </div>
+      <div class="l0-events-grid">
+        <div class="l0-event-tile l0-event-tile-1 sr">
+          <div class="caption">
+            <span class="date">Feb 2026 &middot; Pretoria</span>
+            <h3>Love Is In The ERRE</h3>
+          </div>
+        </div>
+        <div class="l0-event-tile l0-event-tile-2 sr sr-delay-1">
+          <div class="caption">
+            <span class="date">Signature Masterclass</span>
+            <h3>Build A Signature Style</h3>
+          </div>
+        </div>
+        <div class="l0-event-tile l0-event-tile-3 sr sr-delay-2">
+          <div class="caption">
+            <span class="date">Grazing &amp; Connection</span>
+            <h3>A Softness Shared</h3>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -2190,7 +907,7 @@
       <div class="l0-founder-text">
         <span class="section-label sr">The Founder</span>
         <h2 class="sr">Carol Mnisi</h2>
-        <div class="subtitle sr">Global Sourcing Strategist. Fashion Devotee. Feminine Energy Advocate.</div>
+        <div class="subtitle sr">Global Sourcing Strategist &middot; Transformation Coach &middot; Personal Stylist &middot; Make Up Artist &middot; Fashion Enthusiast &middot; Feminine Energy Advocate</div>
         <p class="sr">I am Carol Mnisi, a global sourcing strategist with over 25 years of experience navigating supply chains across steel, energy, and mining equipment manufacturing. I thrived in industries defined by grit and grind: spaces where masculine energy was the currency of success.</p>
         <p class="sr">At the height of achievement, I felt invincible to the world but invisible to my own soul. Then came the shift. I rediscovered the essence I had buried: empathy, intuition, creativity. These were not weaknesses; they were my superpowers.</p>
         <p class="sr">Fashion became my sanctuary, style my language. Every outfit declared: I am soft yet strong. I stopped performing and started becoming.</p>
@@ -2270,468 +987,13 @@
       <p>&copy; 2026 Be Audaciously You. All rights reserved.</p>
       <div class="dev-sig">&#9835; Built with love and drum &amp; bass by Brian Leputu</div>
     </footer>
-  </div>
-
-  <!-- ============================================================
-       LAYOUT 1: LUXE EDITORIAL
-       ============================================================ -->
-  <div class="layout-panel l1" id="layout1">
-
-    <!-- Hero -->
-    <section class="l1-hero">
-      <div class="l1-hero-left">
-        <div class="overline">Est. 2024 &mdash; A Movement for Women</div>
-        <h1>Be<br>Audaciously<br><em>You</em></h1>
-        <p>We help women amplify and unleash their most audacious selves. So they can be undeniably visible in all aspects of life.</p>
-        <div class="l1-btn">
-          Discover the Movement
-          <svg viewBox="0 0 24 24" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </div>
-      <div class="l1-hero-right"></div>
-    </section>
-
-    <!-- Services strip -->
-    <div class="l1-strip">
-      <div class="l1-strip-item">
-        <span class="num">01</span>
-        <h3>Masterclasses</h3>
-        <p>Expert-led sessions on personal styling and confidence.</p>
-      </div>
-      <div class="l1-strip-item">
-        <span class="num">02</span>
-        <h3>Events</h3>
-        <p>Curated gatherings to connect and inspire.</p>
-      </div>
-      <div class="l1-strip-item">
-        <span class="num">03</span>
-        <h3>Gallery</h3>
-        <p>Visual celebration of audacious style.</p>
-      </div>
-      <div class="l1-strip-item">
-        <span class="num">04</span>
-        <h3>Community</h3>
-        <p>A supportive sisterhood of like-minded women.</p>
-      </div>
-    </div>
-
-    <!-- About -->
-    <section class="l1-about">
-      <div class="l1-about-img"></div>
-      <div class="l1-about-text">
-        <div class="overline">About the Movement</div>
-        <h2>Holding Space for<br>Your Softness</h2>
-        <p>Our mission is to hold space for their <strong>softness</strong>: creating an environment where women feel safe to let down their guard, embrace vulnerability, and nurture gentleness without judgment or pressure.</p>
-        <p>We educate and empower women to use their wardrobes not just as clothing but as tools of transformation.</p>
-      </div>
-    </section>
-
-    <!-- Founder -->
-    <section class="l1-founder">
-      <div class="l1-founder-img"></div>
-      <div class="l1-founder-text">
-        <h2>Carol Mnisi</h2>
-        <div class="subtitle">Global Sourcing Strategist. Fashion Devotee. Feminine Energy Advocate.</div>
-        <p>Over 25 years navigating supply chains across steel, energy, and mining equipment manufacturing. I thrived in industries defined by grit and grind: spaces where masculine energy was the currency of success.</p>
-        <p>Fashion became my sanctuary, style my language. Every outfit declared: I am soft yet strong. I stopped performing and started becoming.</p>
-        <blockquote>"Today, I am no longer surviving. I am thriving. I am whole. I am audaciously me. Now it's your turn."</blockquote>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="l1-cta">
-      <h2>Join the Movement</h2>
-      <p>Step into the spotlight of your own life with confidence and elegance.</p>
-      <div class="l1-cta-btn">Become a Member</div>
-      <p class="l1-sig">&#9835; Built with love and drum &amp; bass by Brian Leputu</p>
-    </section>
-  </div>
-
-
-  <!-- ============================================================
-       LAYOUT 2: MODERN WARM
-       ============================================================ -->
-  <div class="layout-panel l2" id="layout2">
-
-    <!-- Hero: image-led with text at bottom -->
-    <section class="l2-hero">
-      <div class="l2-hero-overlay"></div>
-      <div class="l2-hero-content">
-        <div class="overline">A Movement for Women</div>
-        <h1>Be Audaciously<br><span>You</span></h1>
-        <p>We help women amplify and unleash their most audacious selves. So they can be undeniably visible in all aspects of life.</p>
-        <div class="l2-btn">Join the Movement</div>
-      </div>
-    </section>
-
-    <!-- Community image band -->
-    <div class="l2-community-band"></div>
-
-    <!-- About: overlapping card -->
-    <section class="l2-about">
-      <div class="l2-about-inner">
-        <div class="overline">About Us</div>
-        <h2>Holding Space for Your Softness</h2>
-        <p>Our mission is to hold space for their <strong>softness</strong>: creating an environment where women feel safe to let down their guard, embrace vulnerability, and nurture gentleness without judgment or pressure.</p>
-        <p>We educate and empower women to use their wardrobes not just as clothing but as tools of transformation.</p>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section class="l2-services">
-      <div class="l2-services-header">
-        <h2>What We Offer</h2>
-      </div>
-      <div class="l2-services-grid">
-        <div class="l2-service-card">
-          <div class="icon">&#x1F4DA;</div>
-          <h3>Masterclasses</h3>
-          <p>Expert-led sessions on personal styling, confidence building, and reclaiming your feminine power.</p>
-        </div>
-        <div class="l2-service-card">
-          <div class="icon">&#x2728;</div>
-          <h3>Events</h3>
-          <p>Curated gatherings and experiences designed to connect, inspire, and celebrate women.</p>
-        </div>
-        <div class="l2-service-card">
-          <div class="icon">&#x1F5BC;</div>
-          <h3>Gallery</h3>
-          <p>A visual celebration of audacious style and the transformative power of fashion.</p>
-        </div>
-        <div class="l2-service-card">
-          <div class="icon">&#x1F91D;</div>
-          <h3>Community</h3>
-          <p>A supportive sisterhood who uplift each other and grow together in confidence.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Founder -->
-    <section class="l2-founder">
-      <div class="l2-founder-inner">
-        <div class="l2-founder-img"></div>
-        <div class="l2-founder-text">
-          <h2>Carol Mnisi</h2>
-          <div class="subtitle">Global Sourcing Strategist. Fashion Devotee. Feminine Energy Advocate.</div>
-          <p>Over 25 years navigating supply chains across steel, energy, and mining equipment manufacturing. I thrived in industries defined by grit and grind: spaces where masculine energy was the currency of success.</p>
-          <p>Fashion became my sanctuary, style my language. Every outfit declared: I am soft yet strong. I stopped performing and started becoming.</p>
-          <blockquote>"Today, I am no longer surviving. I am thriving. I am whole. I am audaciously me. Now it's your turn."</blockquote>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="l2-cta">
-      <h2>Join the Movement</h2>
-      <p>Step into the spotlight of your own life with confidence and elegance.</p>
-      <div class="l2-btn" style="background:var(--gold);color:var(--charcoal);">Become a Member</div>
-      <p style="margin-top:3rem;font-size:0.65rem;color:rgba(245,240,232,0.25);letter-spacing:0.05em;">&#9835; Built with love and drum &amp; bass by Brian Leputu</p>
-    </section>
-  </div>
-
-
-  <!-- ============================================================
-       LAYOUT 3: WARM & INTIMATE
-       ============================================================ -->
-  <div class="layout-panel l3" id="layout3">
-
-    <!-- Hero -->
-    <section class="l3-hero">
-      <div class="l3-hero-bg"></div>
-      <div class="l3-organic"></div>
-      <div class="l3-organic"></div>
-      <div class="l3-organic"></div>
-      <div class="l3-hero-content">
-        <div class="overline">A space for women</div>
-        <h1>Be <strong>Audaciously</strong><br>You</h1>
-        <p>We help women amplify and unleash their most audacious selves. So they can be undeniably visible in all aspects of life.</p>
-        <div class="l3-btn">Join Our Community</div>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section class="l3-services">
-      <div class="l3-services-header">
-        <h2>What We Offer</h2>
-      </div>
-      <div class="l3-services-grid">
-        <div class="l3-service-card">
-          <div class="l3-service-icon">&#x1F4DA;</div>
-          <h3>Masterclasses</h3>
-          <p>Expert-led sessions on styling and confidence.</p>
-        </div>
-        <div class="l3-service-card">
-          <div class="l3-service-icon">&#x2728;</div>
-          <h3>Events</h3>
-          <p>Curated gatherings to connect and inspire.</p>
-        </div>
-        <div class="l3-service-card">
-          <div class="l3-service-icon">&#x1F5BC;</div>
-          <h3>Gallery</h3>
-          <p>Celebrating audacious style visually.</p>
-        </div>
-        <div class="l3-service-card">
-          <div class="l3-service-icon">&#x1F91D;</div>
-          <h3>Community</h3>
-          <p>A sisterhood growing in confidence together.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section class="l3-about">
-      <div class="l3-about-img"></div>
-      <div class="l3-about-text">
-        <h2>Holding Space for Your Softness</h2>
-        <p>Our mission is to create an environment where women feel safe to let down their guard, embrace vulnerability, and nurture gentleness without judgment or pressure.</p>
-        <p>We educate and empower women to use their wardrobes not just as clothing but as tools of transformation.</p>
-      </div>
-    </section>
-
-    <!-- Founder -->
-    <section class="l3-founder">
-      <div class="l3-founder-inner">
-        <div class="l3-founder-portrait"></div>
-        <h2>Carol Mnisi</h2>
-        <div class="subtitle">Global Sourcing Strategist. Fashion Devotee. Feminine Energy Advocate.</div>
-        <p>Over 25 years navigating supply chains across steel, energy, and mining. I adapted. I excelled. But I lost touch with myself. Then came the shift. I rediscovered the essence I had buried: empathy, intuition, creativity.</p>
-        <blockquote>"Today, I am no longer surviving. I am thriving. I am whole. I am audaciously me. Now it's your turn."</blockquote>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="l3-cta">
-      <h2>Join the Movement</h2>
-      <p>Reclaim your power. Rewrite your story. Become unapologetically you.</p>
-      <div class="l3-btn">Get Started</div>
-      <p style="margin-top:3rem;font-size:0.65rem;color:#aaa;letter-spacing:0.05em;">&#9835; Built with love and drum &amp; bass by Brian Leputu</p>
-    </section>
-  </div>
-
-
-  <!-- ============================================================
-       LAYOUT 4: CAROL'S PICK
-       ============================================================ -->
-  <div class="layout-panel l4" id="layout4">
-
-    <section class="l4-hero">
-      <div class="l4-hero-content">
-        <h1 class="sr">Be Audaciously<br><span>You</span></h1>
-        <p class="sr sr-d1">We help women amplify and unleash their most audacious selves. So they can be undeniably visible in all aspects of life.</p>
-        <div class="l4-btn sr sr-d2">Join Us</div>
-      </div>
-    </section>
-
-    <div class="l4-spacer-lg"></div>
-
-    <div class="l4-about">
-      <div class="l4-about-text">
-        <div class="overline sr">About Us</div>
-        <h2 class="sr">Holding Space for<br>Your Softness</h2>
-        <p class="sr">Our mission is to hold space for their <strong>softness</strong>: creating an environment where women feel safe to let down their guard, embrace vulnerability, and nurture gentleness without judgment or pressure.</p>
-        <p class="sr">We educate and empower women to use their wardrobes not just as clothing but as tools of transformation.</p>
-      </div>
-      <div class="l4-about-img sr"></div>
-    </div>
-
-    <div class="l4-spacer-lg"></div>
-
-    <div class="l4-strip">
-      <div class="l4-strip-item sr">
-        <span class="num">01</span>
-        <h3>Masterclasses</h3>
-        <p>Expert-led sessions on personal styling and confidence.</p>
-      </div>
-      <div class="l4-strip-item sr sr-d1">
-        <span class="num">02</span>
-        <h3>Events</h3>
-        <p>Curated gatherings to connect and inspire.</p>
-      </div>
-      <div class="l4-strip-item sr sr-d2">
-        <span class="num">03</span>
-        <h3>Gallery</h3>
-        <p>Visual celebration of audacious style.</p>
-      </div>
-      <div class="l4-strip-item sr sr-d3">
-        <span class="num">04</span>
-        <h3>Community</h3>
-        <p>A supportive sisterhood of like-minded women.</p>
-      </div>
-    </div>
-
-    <div class="l4-spacer-lg"></div>
-
-    <section class="l4-program">
-      <div class="l4-program-header">
-        <div class="overline sr">Signature Masterclass</div>
-        <h2 class="sr">A Four-Part Journey<br>Into Audacious Style</h2>
-        <p class="sr">From discovering your signature style to curating a wardrobe with intention, the masterclass walks you through the exact framework Carol uses with her clients.</p>
-      </div>
-      <div class="l4-program-grid">
-        <div class="l4-program-card sr">
-          <span class="part">Part One</span>
-          <h3>Signature Style</h3>
-          <ul>
-            <li>What it is and why you need it</li>
-            <li>The cost of not having a personal style</li>
-            <li>Connecting style to self-love</li>
-          </ul>
-          <div class="activity">Welcome &amp; introduction</div>
-        </div>
-        <div class="l4-program-card sr sr-d1">
-          <span class="part">Part Two</span>
-          <h3>Assessments: Get to Know Yourself</h3>
-          <ul>
-            <li>Measurements and body type</li>
-            <li>Colour analysis</li>
-            <li>Lifestyle audit</li>
-          </ul>
-          <div class="activity">Activity: Style quiz &amp; three style words</div>
-        </div>
-        <div class="l4-program-card sr sr-d2">
-          <span class="part">Part Three</span>
-          <h3>Curating With Clarity</h3>
-          <ul>
-            <li>Fabric intelligence: recognise, evaluate, care</li>
-            <li>Quality finishings and cost per wear</li>
-            <li>Building a capsule wardrobe</li>
-          </ul>
-          <div class="activity">Activity: Dress like you mean it</div>
-        </div>
-        <div class="l4-program-card sr sr-d3">
-          <span class="part">Part Four</span>
-          <h3>Adorn Yourself</h3>
-          <ul>
-            <li>Personalised shopping experience</li>
-            <li>Putting the framework into practice</li>
-            <li>Walking away audaciously you</li>
-          </ul>
-          <div class="activity">One-on-one session with Carol</div>
-        </div>
-      </div>
-    </section>
-
-    <div class="l4-spacer-lg"></div>
-
-    <div class="l4-founder">
-      <div class="l4-founder-img-wrap sr">
-        <div class="l4-founder-img"></div>
-        <div class="l4-founder-img-accent"></div>
-      </div>
-      <div class="l4-founder-text">
-        <h2 class="sr">Carol Mnisi</h2>
-        <div class="subtitle sr">Global Sourcing Strategist. Fashion Devotee. Feminine Energy Advocate.</div>
-        <p class="sr">Over 25 years navigating supply chains across steel, energy, and mining equipment manufacturing. I thrived in industries defined by grit and grind: spaces where masculine energy was the currency of success.</p>
-        <p class="sr">Fashion became my sanctuary, style my language. Every outfit declared: I am soft yet strong. I stopped performing and started becoming.</p>
-        <blockquote class="sr">"Today, I am no longer surviving. I am thriving. I am whole. I am audaciously me. Now it's your turn."</blockquote>
-      </div>
-    </div>
-
-    <div class="l4-spacer-lg"></div>
-
-    <section class="l4-mission">
-      <div class="l4-mission-content">
-        <h2 class="sr">Mission Statement</h2>
-        <p class="sr">"Be Audaciously You" is more than a movement: it's a revolution of self-empowerment, a clarion call to live unapologetically and embrace every nuance of your unique identity. Members of this community don't simply wear fashion; they transform it into a statement of boldness and individuality.</p>
-        <p class="sr">In a world that often tries to fit us into predefined molds, "Be Audaciously You" challenges norms and shatters expectations. It invites individuals to step into the spotlight of their own lives with confidence and elegance.</p>
-        <p class="sr">It's a declaration that being yourself is not only enough: it's everything. With each sartorial decision, members assert their right to be vibrant, complex, and undeniably themselves.</p>
-        <div class="l4-btn sr">Join the Movement</div>
-      </div>
-    </section>
-
-    <div class="l4-spacer-lg"></div>
-
-    <section class="l4-events">
-      <div class="l4-events-header">
-        <div class="overline sr">Recent Events</div>
-        <h2 class="sr">Moments From<br>The Movement</h2>
-        <p class="sr">A look at the gatherings, masterclasses, and celebrations that bring the community to life.</p>
-      </div>
-      <div class="l4-events-grid">
-        <div class="l4-event-tile l4-event-tile-1 sr">
-          <div class="caption">
-            <span class="date">Feb 2026 &middot; Pretoria</span>
-            <h3>Love Is In The ERRE</h3>
-          </div>
-        </div>
-        <div class="l4-event-tile l4-event-tile-2 sr sr-d1">
-          <div class="caption">
-            <span class="date">Signature Masterclass</span>
-            <h3>Build A Signature Style</h3>
-          </div>
-        </div>
-        <div class="l4-event-tile l4-event-tile-3 sr sr-d2">
-          <div class="caption">
-            <span class="date">Grazing &amp; Connection</span>
-            <h3>A Softness Shared</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="l4-spacer-lg"></div>
-
-    <div class="l4-contact">
-      <div class="l4-contact-info sr">
-        <h2>Join the Community</h2>
-        <p>Fill out the registration to become a part of our empowering movement.</p>
-        <div class="l4-contact-detail">
-          <div class="l4-contact-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-          <span>(+27) 78-305-2703</span>
-        </div>
-        <div class="l4-contact-detail">
-          <div class="l4-contact-icon"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <span>info@beaudaciouslyyou.com</span>
-        </div>
-        <div class="l4-contact-social">
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
-        </div>
-      </div>
-      <form class="l4-form sr" onsubmit="handleL0Submit(event)">
-        <h3>Register Now</h3>
-        <div class="form-row">
-          <div class="form-group"><label>First Name *</label><input type="text" placeholder="Jane" required></div>
-          <div class="form-group"><label>Last Name *</label><input type="text" placeholder="Doe" required></div>
-        </div>
-        <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+27 00 000 0000"></div>
-        <div class="form-group"><label>Email Address *</label><input type="email" placeholder="jane@example.com" required></div>
-        <div class="form-group"><label>Tell us how we can serve you</label><textarea placeholder="Share your story or tell us what you're looking for..."></textarea></div>
-        <button type="submit" class="l4-btn">Register</button>
-      </form>
-    </div>
-
-    <footer class="l4-footer">
-      <img class="logo-mark" src="images/logo-badge.png" alt="Be Audaciously You">
-      <div class="logo">Be Audaciously You</div>
-      <p>&copy; 2026 Be Audaciously You. All rights reserved.</p>
-      <div class="dev-sig">&#9835; Built with love and drum &amp; bass by Brian Leputu</div>
-    </footer>
-  </div>
 
 
   <!-- ============================================================
        SCRIPT
        ============================================================ -->
   <script>
-    // Tab switching
-    const tabs = document.querySelectorAll('.tab-btn');
-    const panels = document.querySelectorAll('.layout-panel');
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        panels.forEach(p => p.classList.remove('active'));
-        tab.classList.add('active');
-        document.getElementById(tab.dataset.tab).classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        // Re-trigger scroll reveals for newly visible panel
-        setTimeout(() => initScrollReveal(), 100);
-      });
-    });
-
-    // Scroll reveal (L0 scrollytelling + reusable)
+    // Scroll reveal
     function initScrollReveal() {
       const srs = document.querySelectorAll('.sr');
       const obs = new IntersectionObserver((entries) => {
@@ -2739,15 +1001,11 @@
           if (e.isIntersecting) e.target.classList.add('vis');
         });
       }, { threshold: 0.12 });
-      srs.forEach(el => {
-        // Reset if not yet visible so re-entering tabs works
-        if (!el.classList.contains('vis')) obs.observe(el);
-        else obs.observe(el); // keep observing
-      });
+      srs.forEach(el => obs.observe(el));
     }
     initScrollReveal();
 
-    // Form handler for L0
+    // Form handler
     function handleL0Submit(e) {
       e.preventDefault();
       const btn = e.target.querySelector('button[type="submit"]');
