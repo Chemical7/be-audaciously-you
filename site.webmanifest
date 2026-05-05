@@ -1,0 +1,13 @@
+{
+  "name": "Be Audaciously You",
+  "short_name": "Audaciously You",
+  "description": "A community where women rediscover softness, style, and self.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#201e1d",
+  "theme_color": "#201e1d",
+  "icons": [
+    { "src": "logo-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "logo-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
