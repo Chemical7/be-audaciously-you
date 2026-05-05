@@ -3,9 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Be Audaciously You</title>
+  <title>Be Audaciously You — A Movement For Women</title>
+  <meta name="description" content="Be Audaciously You is a community where women rediscover softness, style, and self. Personal styling, masterclasses, beauty rituals, and curated retreats with Carol Mnisi.">
+  <meta name="author" content="Carol Mnisi">
+  <meta name="theme-color" content="#201e1d">
+  <link rel="canonical" href="https://beaudaciouslyyou.com/">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://beaudaciouslyyou.com/">
+  <meta property="og:title" content="Be Audaciously You — A Movement For Women">
+  <meta property="og:description" content="A community where women rediscover softness, style, and self. Personal styling, masterclasses, beauty, and retreats with Carol Mnisi.">
+  <meta property="og:image" content="https://beaudaciouslyyou.com/images/hero-stage.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Be Audaciously You — A Movement For Women">
+  <meta name="twitter:description" content="A community where women rediscover softness, style, and self.">
+  <meta name="twitter:image" content="https://beaudaciouslyyou.com/images/hero-stage.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap" rel="stylesheet">
@@ -120,6 +135,9 @@
       text-transform: uppercase;
       transition: all 0.3s;
       cursor: pointer;
+      text-decoration: none;
+      border: none;
+      font-family: inherit;
     }
 
     .l0-btn:hover {
@@ -404,7 +422,12 @@
       align-items: center;
       gap: 1rem;
       margin-bottom: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+      transition: opacity 0.2s ease;
     }
+    a.l0-contact-detail:hover { opacity: 0.75; }
+    a.l0-contact-detail:hover .l0-contact-icon { background: rgba(201,169,110,0.15); }
 
     .l0-contact-icon {
       width: 44px;
@@ -485,6 +508,14 @@
     .l0-form textarea { resize: vertical; min-height: 100px; }
     .l0-form input::placeholder, .l0-form textarea::placeholder { color: rgba(245,240,232,0.2); }
     .l0-form .l0-btn { width: 100%; text-align: center; }
+    .l0-form-status {
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: var(--cream);
+      min-height: 1.2em;
+      text-align: center;
+    }
+    .l0-form-status.error { color: #ef1284; }
 
     /* Footer */
     .l0-footer {
@@ -550,6 +581,39 @@
     .l0-program-card:hover {
       background: rgba(201,169,110,0.08);
       border-color: rgba(201,169,110,0.3);
+    }
+
+    /* Pillars: 4 services on a photo background with dim overlay */
+    .l0-pillars {
+      position: relative;
+      padding: 8rem 2rem;
+      background: url('images/fashion-flatlay.jpg') center/cover no-repeat;
+      background-attachment: fixed;
+      overflow: hidden;
+    }
+    .l0-pillars::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(18,18,31,0.72);
+      backdrop-filter: blur(3px);
+    }
+    .l0-pillars-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .l0-pillars-grid { margin-top: 4rem; }
+
+    .l0-pillar-card {
+      background: rgba(255,255,255,0.04);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(201,169,110,0.22);
+    }
+    .l0-pillar-card:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(201,169,110,0.45);
     }
     .l0-program-card .part {
       font-family: var(--font-body);
@@ -715,7 +779,8 @@
       .l0-hero-content { padding: 0 2rem; }
       .l0-service-tag { min-width: 130px; flex: 1 1 40%; }
       .l0-form .form-row { grid-template-columns: 1fr; }
-      .l0-hero, .l0-services, .l0-vision { background-attachment: scroll; }
+      .l0-hero, .l0-pillars, .l0-vision { background-attachment: scroll; }
+      .l0-pillars { padding: 5rem 1.5rem; }
       .l0-program-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .l0-events-grid { grid-template-columns: 1fr; gap: 1.25rem; }
       .l0-event-tile { aspect-ratio: 16/10; }
@@ -756,7 +821,7 @@
       <div class="l0-hero-content">
         <h1 class="sr">Be Audaciously<br>You</h1>
         <p class="sr sr-delay-1">We help women amplify and unleash their most audacious selves. So they can be undeniably visible in all aspects of life.</p>
-        <div class="l0-btn sr sr-delay-2">Join Us</div>
+        <a href="#contact" class="l0-btn sr sr-delay-2">Join Us</a>
       </div>
     </section>
 
@@ -782,89 +847,56 @@
 
     <div class="l0-spacer-lg"></div>
 
-    <section class="l0-services" id="services">
-      <div class="l0-services-inner">
-        <a href="#personal-styling" class="l0-service-tag sr">Personal Styling<span>Curate your personal style</span></a>
-        <a href="#masterclass" class="l0-service-tag sr sr-delay-1">Masterclass<span>Mindset &amp; NLP coaching</span></a>
-        <a href="#beauty" class="l0-service-tag sr sr-delay-2">Beauty<span>Makeup &amp; skincare</span></a>
-        <a href="#retreat" class="l0-service-tag sr sr-delay-3">Rest &amp; Retreat<span>Curated luxury getaways</span></a>
-      </div>
-    </section>
-
-    <div class="l0-spacer-lg"></div>
-
-    <section class="l0-service-detail" id="personal-styling">
-      <div class="overline sr">Personal Styling</div>
-      <h2 class="sr">Curate Your Personal Style</h2>
-      <p class="sr">Personal style is how you show up in the world. One-on-one styling sessions to discover the colours, cuts, and silhouettes that tell your story, so every time you get dressed, you are dressing the woman you are becoming.</p>
-    </section>
-
-    <div class="l0-spacer-lg"></div>
-
-    <section class="l0-program" id="masterclass">
-      <div class="l0-program-header">
-        <div class="overline sr">Signature Masterclass</div>
-        <h2 class="sr">A Four-Part Journey<br>Into Audacious Style</h2>
-        <p class="sr">From discovering your signature style to curating a wardrobe with intention, the masterclass walks you through the exact framework Carol uses with her clients. Grounded in mindset and NLP coaching, it is as much about how you think as what you wear.</p>
-      </div>
-      <div class="l0-program-grid">
-        <div class="l0-program-card sr">
-          <span class="part">Part One</span>
-          <h3>Signature Style</h3>
-          <ul>
-            <li>What it is and why you need it</li>
-            <li>The cost of not having a personal style</li>
-            <li>Connecting style to self-love</li>
-          </ul>
-          <div class="activity">Welcome &amp; introduction</div>
+    <section class="l0-pillars" id="services">
+      <div class="l0-pillars-inner">
+        <div class="l0-program-header">
+          <div class="overline sr">The Audacious Path</div>
+          <h2 class="sr">Four Ways To Be<br>Audaciously You</h2>
+          <p class="sr">Style, mindset, beauty, and rest. Four pillars of the Be Audaciously You experience, each designed to meet you where you are and walk with you toward who you are becoming.</p>
         </div>
-        <div class="l0-program-card sr sr-delay-1">
-          <span class="part">Part Two</span>
-          <h3>Assessments: Get to Know Yourself</h3>
-          <ul>
-            <li>Measurements and body type</li>
-            <li>Colour analysis</li>
-            <li>Lifestyle audit</li>
-          </ul>
-          <div class="activity">Activity: Style quiz &amp; three style words</div>
-        </div>
-        <div class="l0-program-card sr sr-delay-2">
-          <span class="part">Part Three</span>
-          <h3>Curating With Clarity</h3>
-          <ul>
-            <li>Fabric intelligence: recognise, evaluate, care</li>
-            <li>Quality finishings and cost per wear</li>
-            <li>Building a capsule wardrobe</li>
-          </ul>
-          <div class="activity">Activity: Dress like you mean it</div>
-        </div>
-        <div class="l0-program-card sr sr-delay-3">
-          <span class="part">Part Four</span>
-          <h3>Adorn Yourself</h3>
-          <ul>
-            <li>Personalised shopping experience</li>
-            <li>Putting the framework into practice</li>
-            <li>Walking away audaciously you</li>
-          </ul>
-          <div class="activity">One-on-one session with Carol</div>
+        <div class="l0-program-grid l0-pillars-grid">
+          <div class="l0-program-card l0-pillar-card sr" id="personal-styling">
+            <span class="part">Personal Styling</span>
+            <h3>Curate Your Personal Style</h3>
+            <ul>
+              <li>One-on-one styling sessions with Carol</li>
+              <li>Colour, cut, and silhouette discovery</li>
+              <li>A wardrobe that tells your story</li>
+            </ul>
+            <div class="activity">Dress the woman you are becoming</div>
+          </div>
+          <div class="l0-program-card l0-pillar-card sr sr-delay-1" id="masterclass">
+            <span class="part">Signature Masterclass</span>
+            <h3>A Four-Part Journey Into Style</h3>
+            <ul>
+              <li>Mindset and NLP coaching at the core</li>
+              <li>Carol's exact client framework</li>
+              <li>From signature style to capsule wardrobe</li>
+            </ul>
+            <div class="activity">As much how you think as what you wear</div>
+          </div>
+          <div class="l0-program-card l0-pillar-card sr sr-delay-2" id="beauty">
+            <span class="part">Beauty</span>
+            <h3>Makeup &amp; Skincare</h3>
+            <ul>
+              <li>Rituals grounded in feminine energy</li>
+              <li>Techniques layered with intention</li>
+              <li>Feel as beautiful as you look</li>
+            </ul>
+            <div class="activity">What's underneath matters too</div>
+          </div>
+          <div class="l0-program-card l0-pillar-card sr sr-delay-3" id="retreat">
+            <span class="part">Rest &amp; Retreat</span>
+            <h3>Curated Luxury Getaways</h3>
+            <ul>
+              <li>Intentional weekend retreats</li>
+              <li>Quiet spaces to breathe and reset</li>
+              <li>Reconnection in a community of women</li>
+            </ul>
+            <div class="activity">Return audacious</div>
+          </div>
         </div>
       </div>
-    </section>
-
-    <div class="l0-spacer-lg"></div>
-
-    <section class="l0-service-detail" id="beauty">
-      <div class="overline sr">Beauty</div>
-      <h2 class="sr">Makeup &amp; Skincare</h2>
-      <p class="sr">What's underneath matters as much as what's on top. Rituals and techniques grounded in feminine energy, designed to help you feel as beautiful as you look, one intentional layer at a time.</p>
-    </section>
-
-    <div class="l0-spacer-lg"></div>
-
-    <section class="l0-service-detail" id="retreat">
-      <div class="overline sr">Rest &amp; Retreat</div>
-      <h2 class="sr">Curated Luxury Getaways</h2>
-      <p class="sr">Intentional weekend retreats designed for rest, relaxation, and reconnection. Quiet spaces to breathe, reset, and return to the audacious community of women walking this journey beside you.</p>
     </section>
 
     <div class="l0-spacer-lg"></div>
@@ -925,59 +957,60 @@
         <p class="sr">"Be Audaciously You" is more than a movement: it's a revolution of self-empowerment, a clarion call to live unapologetically and embrace every nuance of your unique identity. Members of this community don't simply wear fashion; they transform it into a statement of boldness and individuality.</p>
         <p class="sr">In a world that often tries to fit us into predefined molds, "Be Audaciously You" challenges norms and shatters expectations. It invites individuals to step into the spotlight of their own lives with confidence and elegance.</p>
         <p class="sr">It's a declaration that being yourself is not only enough: it's everything. With each sartorial decision, members assert their right to be vibrant, complex, and undeniably themselves.</p>
-        <div class="l0-btn sr">Join the Movement</div>
+        <a href="#contact" class="l0-btn sr">Join the Movement</a>
       </div>
     </section>
 
     <div class="l0-spacer-lg"></div>
 
-    <div class="l0-contact">
+    <div class="l0-contact" id="contact">
       <div class="l0-contact-info sr">
         <h2>Join the Community</h2>
         <p>Fill out the registration to become a part of our empowering movement.</p>
-        <div class="l0-contact-detail">
+        <a class="l0-contact-detail" href="tel:+27783052703">
           <div class="l0-contact-icon">
             <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
-          <span>(+27) 78-305-2703</span>
-        </div>
-        <div class="l0-contact-detail">
+          <span>(+27) 78&nbsp;305&nbsp;2703</span>
+        </a>
+        <a class="l0-contact-detail" href="mailto:info@beaudaciouslyyou.com">
           <div class="l0-contact-icon">
             <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
           <span>info@beaudaciouslyyou.com</span>
-        </div>
+        </a>
         <div class="l0-contact-social">
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
+          <a href="https://instagram.com/beaudaciouslyyou" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://facebook.com/beaudaciouslyyou" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://wa.me/27783052703" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></a>
         </div>
       </div>
-      <form class="l0-form sr" onsubmit="handleL0Submit(event)">
+      <form class="l0-form sr" id="registerForm" onsubmit="handleL0Submit(event)" novalidate>
         <h3>Register Now</h3>
         <div class="form-row">
           <div class="form-group">
-            <label>First Name *</label>
-            <input type="text" placeholder="Jane" required>
+            <label for="f-first">First Name *</label>
+            <input id="f-first" name="firstName" type="text" placeholder="Jane" autocomplete="given-name" required>
           </div>
           <div class="form-group">
-            <label>Last Name *</label>
-            <input type="text" placeholder="Doe" required>
+            <label for="f-last">Last Name *</label>
+            <input id="f-last" name="lastName" type="text" placeholder="Doe" autocomplete="family-name" required>
           </div>
         </div>
         <div class="form-group">
-          <label>Phone Number</label>
-          <input type="tel" placeholder="+27 00 000 0000">
+          <label for="f-phone">Phone Number</label>
+          <input id="f-phone" name="phone" type="tel" placeholder="+27 00 000 0000" autocomplete="tel">
         </div>
         <div class="form-group">
-          <label>Email Address *</label>
-          <input type="email" placeholder="jane@example.com" required>
+          <label for="f-email">Email Address *</label>
+          <input id="f-email" name="email" type="email" placeholder="jane@example.com" autocomplete="email" required>
         </div>
         <div class="form-group">
-          <label>Tell us how we can serve you</label>
-          <textarea placeholder="Share your story, ask a question, or tell us what you're looking for..."></textarea>
+          <label for="f-message">Tell us how we can serve you</label>
+          <textarea id="f-message" name="message" placeholder="Share your story, ask a question, or tell us what you're looking for..."></textarea>
         </div>
         <button type="submit" class="l0-btn">Register</button>
+        <p class="l0-form-status" aria-live="polite"></p>
       </form>
     </div>
 
@@ -993,6 +1026,16 @@
        SCRIPT
        ============================================================ -->
   <script>
+    // ============================================================
+    // FORM CONFIG
+    // To enable real submissions, set FORMSPREE_ENDPOINT to a
+    // Formspree URL like 'https://formspree.io/f/xyzabc123'.
+    // While unset, the form falls back to opening the user's mail
+    // client with the message pre-filled to FALLBACK_EMAIL.
+    // ============================================================
+    const FORMSPREE_ENDPOINT = '';
+    const FALLBACK_EMAIL = 'info@beaudaciouslyyou.com';
+
     // Scroll reveal
     function initScrollReveal() {
       const srs = document.querySelectorAll('.sr');
@@ -1006,19 +1049,76 @@
     initScrollReveal();
 
     // Form handler
-    function handleL0Submit(e) {
+    async function handleL0Submit(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('button[type="submit"]');
-      const original = btn.textContent;
-      btn.textContent = 'Thank you!';
-      btn.style.background = 'var(--plum)';
-      btn.style.color = 'var(--cream)';
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.style.background = '';
-        btn.style.color = '';
-        e.target.reset();
-      }, 3000);
+      const form = e.target;
+      const btn = form.querySelector('button[type="submit"]');
+      const status = form.querySelector('.l0-form-status');
+      const data = Object.fromEntries(new FormData(form).entries());
+
+      if (!data.firstName || !data.lastName || !data.email) {
+        status.textContent = 'Please fill in the required fields.';
+        status.classList.add('error');
+        return;
+      }
+
+      const originalBtnText = btn.textContent;
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      status.textContent = '';
+      status.classList.remove('error');
+
+      const showSuccess = () => {
+        btn.textContent = 'Thank you!';
+        btn.style.background = 'var(--plum)';
+        btn.style.color = 'var(--cream)';
+        status.textContent = "We've received your registration. Carol will be in touch soon.";
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.textContent = originalBtnText;
+          btn.style.background = '';
+          btn.style.color = '';
+          status.textContent = '';
+          form.reset();
+        }, 4500);
+      };
+
+      const showError = (msg) => {
+        btn.disabled = false;
+        btn.textContent = originalBtnText;
+        status.textContent = msg || 'Something went wrong. Please try again or email us directly.';
+        status.classList.add('error');
+      };
+
+      if (FORMSPREE_ENDPOINT) {
+        try {
+          const res = await fetch(FORMSPREE_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: new FormData(form)
+          });
+          if (res.ok) { showSuccess(); }
+          else { showError(); }
+        } catch (err) {
+          showError();
+        }
+      } else {
+        // Mailto fallback. Opens the visitor's mail client with the
+        // registration pre-filled. Replace FORMSPREE_ENDPOINT above
+        // for a silent in-browser submission.
+        const subject = encodeURIComponent(`New registration: ${data.firstName} ${data.lastName}`);
+        const lines = [
+          `Name: ${data.firstName} ${data.lastName}`,
+          `Email: ${data.email}`,
+          data.phone ? `Phone: ${data.phone}` : null,
+          '',
+          'Message:',
+          data.message || '(no message)'
+        ].filter(Boolean);
+        const body = encodeURIComponent(lines.join('\n'));
+        window.location.href = `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${body}`;
+        showSuccess();
+      }
     }
   </script>
 </body>
