@@ -1026,12 +1026,13 @@
   <script>
     // ============================================================
     // FORM CONFIG
-    // To enable real submissions, set FORMSPREE_ENDPOINT to a
-    // Formspree URL like 'https://formspree.io/f/xyzabc123'.
-    // While unset, the form falls back to opening the user's mail
-    // client with the message pre-filled to FALLBACK_EMAIL.
+    // SHEETS_ENDPOINT is a Google Apps Script Web App that writes
+    // to a Google Sheet and emails NOTIFY_EMAIL. CORS prevents us
+    // from reading the response, so we submit with mode:'no-cors'
+    // and show success optimistically. The mailto fallback only
+    // fires if the network request itself throws.
     // ============================================================
-    const FORMSPREE_ENDPOINT = '';
+    const SHEETS_ENDPOINT = 'https://script.google.com/macros/s/AKfycbz81sbgyrR4v4qatxNx3buMiMy5xcdH016VY_N5VrI2g4xubt-25BVMooZiilTsXKvT0w/exec';
     const FALLBACK_EMAIL = 'info@beaudaciouslyyou.com';
 
     // Scroll reveal
@@ -1081,42 +1082,35 @@
         }, 4500);
       };
 
-      const showError = (msg) => {
-        btn.disabled = false;
-        btn.textContent = originalBtnText;
-        status.textContent = msg || 'Something went wrong. Please try again or email us directly.';
-        status.classList.add('error');
-      };
-
-      if (FORMSPREE_ENDPOINT) {
+      if (SHEETS_ENDPOINT) {
         try {
-          const res = await fetch(FORMSPREE_ENDPOINT, {
+          await fetch(SHEETS_ENDPOINT, {
             method: 'POST',
-            headers: { 'Accept': 'application/json' },
+            mode: 'no-cors',
             body: new FormData(form)
           });
-          if (res.ok) { showSuccess(); }
-          else { showError(); }
+          showSuccess();
         } catch (err) {
-          showError();
+          // Network-level failure (offline, DNS, etc). Fall back to mailto.
+          mailtoFallback(data);
         }
       } else {
-        // Mailto fallback. Opens the visitor's mail client with the
-        // registration pre-filled. Replace FORMSPREE_ENDPOINT above
-        // for a silent in-browser submission.
-        const subject = encodeURIComponent(`New registration: ${data.firstName} ${data.lastName}`);
-        const lines = [
-          `Name: ${data.firstName} ${data.lastName}`,
-          `Email: ${data.email}`,
-          data.phone ? `Phone: ${data.phone}` : null,
-          '',
-          'Message:',
-          data.message || '(no message)'
-        ].filter(Boolean);
-        const body = encodeURIComponent(lines.join('\n'));
-        window.location.href = `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${body}`;
-        showSuccess();
+        mailtoFallback(data);
       }
+    }
+
+    function mailtoFallback(data) {
+      const subject = encodeURIComponent(`New registration: ${data.firstName} ${data.lastName}`);
+      const lines = [
+        `Name: ${data.firstName} ${data.lastName}`,
+        `Email: ${data.email}`,
+        data.phone ? `Phone: ${data.phone}` : null,
+        '',
+        'Message:',
+        data.message || '(no message)'
+      ].filter(Boolean);
+      const body = encodeURIComponent(lines.join('\n'));
+      window.location.href = `mailto:${FALLBACK_EMAIL}?subject=${subject}&body=${body}`;
     }
   </script>
 </body>
