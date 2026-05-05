@@ -159,15 +159,20 @@
     .l0-spacer { height: 10vh; }
     .l0-spacer-lg { height: 15vh; }
 
-    /* About: text block on dark canvas */
-    .l0-about {
-      max-width: 800px;
+    /* About: text-left / badge-right split (mirror of founder section) */
+    .l0-about-split {
+      max-width: 1100px;
       margin: 0 auto;
       padding: 0 2rem;
-      text-align: center;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 4rem;
+      align-items: center;
     }
 
-    .l0-about .section-label {
+    .l0-about-text { text-align: left; }
+
+    .l0-about-text .section-label {
       font-family: var(--font-elegant);
       font-size: 1rem;
       color: var(--hot-pink);
@@ -175,16 +180,16 @@
       letter-spacing: 0.05em;
     }
 
-    .l0-about h2 {
+    .l0-about-text h2 {
       font-family: var(--font-display);
       font-size: clamp(2rem, 4vw, 3rem);
       color: var(--gold);
       font-weight: 400;
-      margin: 0.75rem 0 2rem;
+      margin: 0.75rem 0 1rem;
       line-height: 1.15;
     }
 
-    .l0-about p {
+    .l0-about-text p {
       font-family: var(--font-elegant);
       font-size: 1.15rem;
       line-height: 1.9;
@@ -192,32 +197,28 @@
       margin-bottom: 1.2rem;
     }
 
-    .l0-about p strong { color: var(--gold-light); font-weight: 600; }
+    .l0-about-text p strong { color: var(--gold-light); font-weight: 600; }
 
-    /* Gold divider line */
-    .l0-rule {
+    .l0-rule-left {
       width: 60px;
       height: 1px;
       background: var(--gold-muted);
-      margin: 0 auto;
       opacity: 0.4;
+      margin: 0 0 2rem;
     }
 
-    /* Logo badge: floating on dark canvas */
-    .l0-badge-wrap {
+    .l0-about-badge {
       display: flex;
       justify-content: center;
-      padding: 2rem;
+      align-items: center;
     }
 
-    .l0-logo-badge {
-      width: 240px;
-      height: 240px;
-      display: block;
-      margin: 0 auto;
+    .l0-about-badge img {
+      width: 100%;
+      max-width: 320px;
+      height: auto;
       filter: drop-shadow(0 0 60px rgba(201,169,110,0.18));
     }
-    .l0-logo-badge img { width: 100%; height: 100%; display: block; }
 
     /* Services: horizontal row, glass cards on parallax image */
     .l0-services {
@@ -800,6 +801,11 @@
       .l0-program-grid { grid-template-columns: 1fr; gap: 1.5rem; }
       .l0-events-grid { grid-template-columns: 1fr; gap: 1.25rem; }
       .l0-event-tile { aspect-ratio: 16/10; }
+      .l0-about-split { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+      .l0-about-text { text-align: center; }
+      .l0-about-badge { order: -1; }
+      .l0-about-badge img { max-width: 200px; }
+      .l0-rule-left { margin-left: auto; margin-right: auto; }
     }
 
     /* Shared placeholder image styles */
@@ -843,23 +849,19 @@
 
     <div class="l0-spacer-lg"></div>
 
-    <div class="l0-badge-wrap sr">
-      <div class="l0-logo-badge">
+    <section class="l0-about-split">
+      <div class="l0-about-text">
+        <span class="section-label sr">About Us</span>
+        <h2 class="sr">A Space for Women</h2>
+        <div class="l0-rule-left sr"></div>
+        <p class="sr">Our mission is to hold space for their <strong>softness</strong>: creating an environment where women feel safe to let down their guard, embrace vulnerability, and nurture gentleness without judgment or pressure.</p>
+        <p class="sr">It's about countering the expectation that strength must always look hard or unyielding, and instead honoring the quiet power of softness, care, and authenticity.</p>
+        <p class="sr">We educate and empower women to use their wardrobes not just as clothing but as tools of transformation.</p>
+      </div>
+      <div class="l0-about-badge sr">
         <img src="images/logo-badge-transparent.png" alt="Be Audaciously You" loading="lazy">
       </div>
-    </div>
-
-    <div class="l0-spacer"></div>
-
-    <div class="l0-about">
-      <span class="section-label sr">About Us</span>
-      <h2 class="sr">A Space for Women</h2>
-      <div class="l0-rule sr"></div>
-      <div class="l0-spacer" style="height:3vh"></div>
-      <p class="sr">Our mission is to hold space for their <strong>softness</strong>: creating an environment where women feel safe to let down their guard, embrace vulnerability, and nurture gentleness without judgment or pressure.</p>
-      <p class="sr">It's about countering the expectation that strength must always look hard or unyielding, and instead honoring the quiet power of softness, care, and authenticity.</p>
-      <p class="sr">We educate and empower women to use their wardrobes not just as clothing but as tools of transformation.</p>
-    </div>
+    </section>
 
     <div class="l0-spacer-lg"></div>
 
@@ -877,8 +879,8 @@
             <p>Personal style is how you show up in the world. One-on-one styling sessions to discover the colours, cuts, and silhouettes that tell your story, so every time you get dressed, you are dressing the woman you are becoming.</p>
           </div>
           <div class="l0-program-card l0-pillar-card sr sr-delay-1" id="masterclass">
-            <span class="part">Signature Masterclass</span>
-            <h3>A Four-Part Journey Into Audacious Style</h3>
+            <span class="part">Mindset</span>
+            <h3>Strengthening Your Self Concept</h3>
             <p>From discovering your signature style to curating a wardrobe with intention, the masterclass walks you through the exact framework Carol uses with her clients. Grounded in mindset and NLP coaching, it is as much about how you think as what you wear.</p>
           </div>
           <div class="l0-program-card l0-pillar-card sr sr-delay-2" id="beauty">
